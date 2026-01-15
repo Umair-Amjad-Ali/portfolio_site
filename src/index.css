@@ -13,20 +13,19 @@
 }
 
 @layer utilities {
-
   /* ========================================
      SPACING UTILITIES
      ======================================== */
   .paddingX {
-    @apply sm:px-16 px-6;
+    @apply sm:px-2 px-2;
   }
 
   .paddingY {
-    @apply sm:py-16 py-6;
+    @apply sm:py-2 py-6;
   }
 
   .padding {
-    @apply sm:px-16 px-6 sm:py-16 py-10;
+    @apply sm:px-2 px-2 sm:py-2 py-6;
   }
 
   /* ========================================
@@ -147,21 +146,27 @@
 
 .grid-background {
   background-color: #0a0e27;
-  background-image:
-    linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+  background-image: linear-gradient(
+      rgba(99, 102, 241, 0.1) 1px,
+      transparent 1px
+    ),
     linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
   position: relative;
 }
 
 .grid-background::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(99, 102, 241, 0.05) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -267,11 +272,11 @@
   transform: translateY(-8px);
 }
 
-.block-container:hover>.btn-back {
+.block-container:hover > .btn-back {
   transform: translateZ(20px) rotateZ(8deg) rotateX(-10deg) rotateY(-10deg);
 }
 
-.block-container:hover>.btn-front {
+.block-container:hover > .btn-front {
   transform: translateZ(40px) translateY(-5px);
   box-shadow: 0 16px 48px rgba(99, 102, 241, 0.3);
   border-color: rgba(99, 102, 241, 0.4);

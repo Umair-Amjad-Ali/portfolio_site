@@ -1,20 +1,33 @@
 import { meta, shopify, starbucks, tesla, engimatix } from "../assests/images";
 
 import {
+  andriodStudio,
+  android,
+  apple,
+  bootstrap,
   car,
   css,
+  dart,
+  docker,
   estate,
   express,
+  figma,
+  firebase,
+  flutter,
   git,
   github,
+  googleColab,
   html,
   javascript,
   mongodb,
   motion,
   mui,
+  netlify,
   nextjs,
   nodejs,
+  postman,
   pricewise,
+  python,
   react,
   redux,
   sass,
@@ -111,76 +124,123 @@ export const socialMediaHero = [
 
 export const skills = [
   {
+    imageUrl: javascript,
+    name: "JavaScript",
+  },
+  {
+    imageUrl: dart,
+    name: "Dart",
+  },
+  {
+    imageUrl: typescript,
+    name: "TypeScript",
+  },
+  {
+    imageUrl: python,
+    name: "Python",
+  },
+
+  {
+    imageUrl: nextjs,
+    name: "Next.js",
+  },
+  {
+    imageUrl: nodejs,
+    name: "Node.js",
+  },
+  {
+    imageUrl: react,
+    name: "React",
+  },
+  {
+    imageUrl: express,
+    name: "Express JS",
+  },
+  {
+    imageUrl: sass,
+    name: "Sass",
+  },
+  {
+    imageUrl: tailwindcss,
+    name: "Tailwind CSS",
+  },
+  {
     imageUrl: css,
     name: "CSS",
-    type: "Frontend",
+  },
+  {
+    imageUrl: html,
+    name: "HTML",
+  },
+  {
+    imageUrl: motion,
+    name: "Framer Motion",
+  },
+  {
+    imageUrl: mui,
+    name: "Material-UI",
+  },
+  {
+    imageUrl: bootstrap,
+    name: "Bootstrap",
+  },
+
+  {
+    imageUrl: flutter,
+    name: "Flutter",
+  },
+  {
+    imageUrl: android,
+    name: "Android Development",
+  },
+  {
+    imageUrl: apple,
+    name: "iOS Development",
+  },
+  {
+    imageUrl: firebase,
+    name: "Firebase",
+  },
+  {
+    imageUrl: mongodb,
+    name: "MongoDB",
+  },
+  {
+    imageUrl: netlify,
+    name: "Netlify",
   },
 
   {
     imageUrl: git,
     name: "Git",
-    type: "Version Control",
   },
   {
     imageUrl: github,
     name: "GitHub",
-    type: "Version Control",
-  },
-  {
-    imageUrl: html,
-    name: "HTML",
-    type: "Frontend",
-  },
-  {
-    imageUrl: javascript,
-    name: "JavaScript",
-    type: "Frontend",
   },
 
   {
-    imageUrl: motion,
-    name: "Motion",
-    type: "Animation",
+    imageUrl: andriodStudio,
+    name: "Android Studio",
+  },
+
+  {
+    imageUrl: docker,
+    name: "Docker",
   },
   {
-    imageUrl: mui,
-    name: "Material-UI",
-    type: "Frontend",
+    imageUrl: figma,
+    name: "Figma",
   },
+
   {
-    imageUrl: nextjs,
-    name: "Next.js",
-    type: "Frontend",
+    imageUrl: googleColab,
+    name: "Google Colab",
   },
+
   {
-    imageUrl: nodejs,
-    name: "Node.js",
-    type: "Backend",
-  },
-  {
-    imageUrl: react,
-    name: "React",
-    type: "Frontend",
-  },
-  {
-    imageUrl: redux,
-    name: "Redux",
-    type: "State Management",
-  },
-  {
-    imageUrl: sass,
-    name: "Sass",
-    type: "Frontend",
-  },
-  {
-    imageUrl: tailwindcss,
-    name: "Tailwind CSS",
-    type: "Frontend",
-  },
-  {
-    imageUrl: typescript,
-    name: "TypeScript",
-    type: "Frontend",
+    imageUrl: postman,
+    name: "PostMan",
   },
 ];
 
@@ -226,7 +286,8 @@ export const projects = [
     dateRange: "Jul 2025 – Current",
     status: "current",
     theme: "btn-back-blue",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
     techStack: ["React Native", "Firebase", "Node.js", "Express", "MongoDB"],
     problem:
       "Battery service companies struggled with managing inventory across multiple trucks and stations, tracking field operations, and generating accurate financial reports in real-time.",
@@ -235,14 +296,18 @@ export const projects = [
     challenges: [
       {
         title: "Complex Multi-Truck Inventory Sync",
-        description: "Syncing inventory across 50+ trucks in real-time while handling offline scenarios was extremely challenging.",
-        solution: "Implemented Firebase offline persistence with conflict resolution and queue-based sync when back online."
+        description:
+          "Syncing inventory across 50+ trucks in real-time while handling offline scenarios was extremely challenging.",
+        solution:
+          "Implemented Firebase offline persistence with conflict resolution and queue-based sync when back online.",
       },
       {
         title: "Dynamic Pricing Engine",
-        description: "Building a flexible pricing system that handles discounts, service fees, and location-based rates was complex.",
-        solution: "Created a rule-based pricing engine with priority layers and real-time calculation caching."
-      }
+        description:
+          "Building a flexible pricing system that handles discounts, service fees, and location-based rates was complex.",
+        solution:
+          "Created a rule-based pricing engine with priority layers and real-time calculation caching.",
+      },
     ],
     features: [
       "Role-based authentication with station/truck passcodes",
@@ -264,7 +329,8 @@ export const projects = [
     dateRange: "Jul 2025 – Sep 2025",
     status: "completed",
     theme: "btn-back-green",
-    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80",
     techStack: ["Flutter", "Firebase", "GPT-4o Vision API", "Dart"],
     problem:
       "Manual food logging is tedious and inaccurate, leading to poor nutrition tracking and users abandoning their health goals.",
@@ -273,14 +339,18 @@ export const projects = [
     challenges: [
       {
         title: "AI Response Latency",
-        description: "GPT-4o Vision API responses took 5-8 seconds, making the user experience feel slow.",
-        solution: "Added optimistic UI with skeleton loaders and background processing with push notifications."
+        description:
+          "GPT-4o Vision API responses took 5-8 seconds, making the user experience feel slow.",
+        solution:
+          "Added optimistic UI with skeleton loaders and background processing with push notifications.",
       },
       {
         title: "Portion Size Accuracy",
-        description: "AI often struggled with accurate portion estimation without reference objects.",
-        solution: "Implemented optional reference object detection (coins, plates) for calibration."
-      }
+        description:
+          "AI often struggled with accurate portion estimation without reference objects.",
+        solution:
+          "Implemented optional reference object detection (coins, plates) for calibration.",
+      },
     ],
     features: [
       "AI-powered 'Snap & Track' feature using GPT-4o Vision API",
@@ -302,7 +372,8 @@ export const projects = [
     dateRange: "Feb 2025 – Aug 2025",
     status: "completed",
     theme: "btn-back-pink",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
     techStack: ["Flutter", "Firebase", "Node.js", "Google Ads", "FCM"],
     problem:
       "Traditional fitness apps lack social engagement and motivation, causing users to lose interest and abandon their fitness routines.",
@@ -311,14 +382,18 @@ export const projects = [
     challenges: [
       {
         title: "Video Streaming Performance",
-        description: "Workout videos were buffering on slow connections, frustrating users mid-exercise.",
-        solution: "Implemented adaptive bitrate streaming and pre-caching of next workout segments."
+        description:
+          "Workout videos were buffering on slow connections, frustrating users mid-exercise.",
+        solution:
+          "Implemented adaptive bitrate streaming and pre-caching of next workout segments.",
       },
       {
         title: "Leaderboard Cheating Prevention",
-        description: "Users were finding ways to artificially inflate their scores and streak counts.",
-        solution: "Added server-side validation with activity pattern analysis and anomaly detection."
-      }
+        description:
+          "Users were finding ways to artificially inflate their scores and streak counts.",
+        solution:
+          "Added server-side validation with activity pattern analysis and anomaly detection.",
+      },
     ],
     features: [
       "Challenge-focused app with workout videos and tutorials",
@@ -340,7 +415,8 @@ export const projects = [
     dateRange: "Feb 2023 – Jan 2024",
     status: "completed",
     theme: "btn-back-orange",
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
     techStack: ["Python", "TensorFlow", "CNN", "Res U-Net", "OpenCV"],
     problem:
       "Early brain tumor detection is critical but challenging, with manual MRI analysis being time-consuming and prone to human error.",
@@ -349,14 +425,18 @@ export const projects = [
     challenges: [
       {
         title: "Limited Training Data",
-        description: "Medical MRI datasets are scarce and expensive, limiting model training accuracy.",
-        solution: "Used data augmentation, transfer learning from ImageNet, and synthetic data generation."
+        description:
+          "Medical MRI datasets are scarce and expensive, limiting model training accuracy.",
+        solution:
+          "Used data augmentation, transfer learning from ImageNet, and synthetic data generation.",
       },
       {
         title: "Model Interpretability",
-        description: "Doctors needed to understand WHY the AI made its diagnosis, not just the result.",
-        solution: "Implemented Grad-CAM visualization to highlight tumor regions that influenced the prediction."
-      }
+        description:
+          "Doctors needed to understand WHY the AI made its diagnosis, not just the result.",
+        solution:
+          "Implemented Grad-CAM visualization to highlight tumor regions that influenced the prediction.",
+      },
     ],
     features: [
       "CNN-based brain tumor classification system",
@@ -382,7 +462,8 @@ export const additionalProjects = [
     dateRange: "Jan 2024 – Mar 2024",
     status: "completed",
     theme: "btn-back-red",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     techStack: ["React", "Node.js", "MongoDB", "Chart.js", "Tailwind CSS"],
     problem:
       "E-commerce businesses needed a centralized dashboard to manage orders, track inventory, and analyze sales trends without switching between multiple tools.",
@@ -391,14 +472,18 @@ export const additionalProjects = [
     challenges: [
       {
         title: "Real-time Data Synchronization",
-        description: "Keeping dashboard data in sync across multiple admin users was causing conflicts and stale data issues.",
-        solution: "Implemented WebSocket connections with optimistic UI updates and server-side conflict resolution."
+        description:
+          "Keeping dashboard data in sync across multiple admin users was causing conflicts and stale data issues.",
+        solution:
+          "Implemented WebSocket connections with optimistic UI updates and server-side conflict resolution.",
       },
       {
         title: "Large Dataset Performance",
-        description: "Loading thousands of orders was causing significant page lag and poor user experience.",
-        solution: "Added virtual scrolling, pagination, and server-side filtering to handle 100k+ records smoothly."
-      }
+        description:
+          "Loading thousands of orders was causing significant page lag and poor user experience.",
+        solution:
+          "Added virtual scrolling, pagination, and server-side filtering to handle 100k+ records smoothly.",
+      },
     ],
     features: [
       "Real-time sales analytics with interactive Chart.js visualizations",
@@ -420,8 +505,15 @@ export const additionalProjects = [
     dateRange: "Sep 2023 – Nov 2023",
     status: "completed",
     theme: "btn-back-green",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80",
-    techStack: ["Next.js", "Prisma", "PostgreSQL", "Socket.io", "Framer Motion"],
+    image:
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80",
+    techStack: [
+      "Next.js",
+      "Prisma",
+      "PostgreSQL",
+      "Socket.io",
+      "Framer Motion",
+    ],
     problem:
       "Remote teams struggled with task visibility and communication, leading to missed deadlines and duplicated work efforts.",
     solution:
@@ -429,14 +521,18 @@ export const additionalProjects = [
     challenges: [
       {
         title: "Drag-and-Drop Across Columns",
-        description: "Implementing smooth drag-and-drop that works across different columns while maintaining order persistence was complex.",
-        solution: "Used react-beautiful-dnd with custom drop logic and optimistic updates to database."
+        description:
+          "Implementing smooth drag-and-drop that works across different columns while maintaining order persistence was complex.",
+        solution:
+          "Used react-beautiful-dnd with custom drop logic and optimistic updates to database.",
       },
       {
         title: "Real-time Collaboration Conflicts",
-        description: "Multiple users editing the same task simultaneously caused data overwrites.",
-        solution: "Implemented operational transformation and last-write-wins with user notification system."
-      }
+        description:
+          "Multiple users editing the same task simultaneously caused data overwrites.",
+        solution:
+          "Implemented operational transformation and last-write-wins with user notification system.",
+      },
     ],
     features: [
       "Drag-and-drop Kanban boards with smooth animations",
@@ -458,8 +554,14 @@ export const additionalProjects = [
     dateRange: "Jun 2023 – Jul 2023",
     status: "completed",
     theme: "btn-back-blue",
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&q=80",
-    techStack: ["React Native", "OpenWeather API", "Geolocation", "AsyncStorage"],
+    image:
+      "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&q=80",
+    techStack: [
+      "React Native",
+      "OpenWeather API",
+      "Geolocation",
+      "AsyncStorage",
+    ],
     problem:
       "Existing weather apps were cluttered with ads and lacked personalized insights for daily planning and outdoor activities.",
     solution:
@@ -467,14 +569,18 @@ export const additionalProjects = [
     challenges: [
       {
         title: "Accurate Location Detection",
-        description: "Getting precise user location for hyperlocal weather data was inconsistent across devices.",
-        solution: "Implemented fallback chain: GPS → Network → IP-based location with caching for offline access."
+        description:
+          "Getting precise user location for hyperlocal weather data was inconsistent across devices.",
+        solution:
+          "Implemented fallback chain: GPS → Network → IP-based location with caching for offline access.",
       },
       {
         title: "Battery Optimization",
-        description: "Continuous location tracking for weather updates was draining device battery quickly.",
-        solution: "Used significant location change monitoring instead of continuous GPS polling."
-      }
+        description:
+          "Continuous location tracking for weather updates was draining device battery quickly.",
+        solution:
+          "Used significant location change monitoring instead of continuous GPS polling.",
+      },
     ],
     features: [
       "7-day weather forecast with hourly breakdowns",
@@ -496,7 +602,8 @@ export const additionalProjects = [
     dateRange: "Apr 2023 – May 2023",
     status: "completed",
     theme: "btn-back-yellow",
-    image: "https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800&q=80",
     techStack: ["Flutter", "Spoonacular API", "SQLite", "Provider"],
     problem:
       "People often struggle with what to cook with available ingredients, leading to food waste and repetitive meals.",
@@ -505,14 +612,18 @@ export const additionalProjects = [
     challenges: [
       {
         title: "Ingredient Matching Algorithm",
-        description: "Matching user ingredients to recipes while accounting for substitutes and optional items was complex.",
-        solution: "Created weighted scoring system that ranks recipes by ingredient match percentage and availability."
+        description:
+          "Matching user ingredients to recipes while accounting for substitutes and optional items was complex.",
+        solution:
+          "Created weighted scoring system that ranks recipes by ingredient match percentage and availability.",
       },
       {
         title: "Offline Recipe Access",
-        description: "Users wanted to access saved recipes without internet connection while cooking.",
-        solution: "Implemented SQLite database for offline storage with image caching and sync when online."
-      }
+        description:
+          "Users wanted to access saved recipes without internet connection while cooking.",
+        solution:
+          "Implemented SQLite database for offline storage with image caching and sync when online.",
+      },
     ],
     features: [
       "Search recipes by available ingredients",
@@ -534,7 +645,8 @@ export const additionalProjects = [
     dateRange: "Feb 2023 – Mar 2023",
     status: "completed",
     theme: "btn-back-pink",
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80",
     techStack: ["Next.js", "Vercel", "Tailwind CSS", "Cloudinary", "MongoDB"],
     problem:
       "Developers and designers without web development skills struggled to create professional portfolios quickly.",
@@ -543,14 +655,18 @@ export const additionalProjects = [
     challenges: [
       {
         title: "Dynamic Component Rendering",
-        description: "Allowing users to add, remove, and reorder sections dynamically while maintaining responsiveness.",
-        solution: "Built a JSON-based schema that renders React components dynamically with drag-and-drop editing."
+        description:
+          "Allowing users to add, remove, and reorder sections dynamically while maintaining responsiveness.",
+        solution:
+          "Built a JSON-based schema that renders React components dynamically with drag-and-drop editing.",
       },
       {
         title: "Automated Deployment Pipeline",
-        description: "Deploying user portfolios to unique subdomains automatically required complex infrastructure.",
-        solution: "Integrated Vercel API for automated deployments with custom domain mapping."
-      }
+        description:
+          "Deploying user portfolios to unique subdomains automatically required complex infrastructure.",
+        solution:
+          "Integrated Vercel API for automated deployments with custom domain mapping.",
+      },
     ],
     features: [
       "Drag-and-drop section builder",
@@ -564,4 +680,3 @@ export const additionalProjects = [
     github: "https://github.com/Umair-Amjad-Ali/portfolio-generator",
   },
 ];
-

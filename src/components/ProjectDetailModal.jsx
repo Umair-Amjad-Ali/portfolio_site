@@ -13,12 +13,13 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
         <AnimatePresence>
             {isOpen && (
                 <>
-                    {/* Backdrop with blur */}
+                    {/* Backdrop */}
                     <motion.div
-                        className="fixed inset-0 bg-black/90 backdrop-blur-md z-50"
+                        className="fixed inset-0 bg-black/95 z-50"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
                         onClick={onClose}
                     />
 
@@ -31,14 +32,14 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
                     >
                         <motion.div
                             className="relative w-full max-w-5xl max-h-[95vh] overflow-hidden rounded-3xl bg-gradient-to-b from-slate-900 to-[#0a0e27] border border-indigo-500/30 shadow-[0_30px_60px_rgba(0,0,0,0.6),0_0_120px_rgba(99,102,241,0.15)]"
-                            initial={{ scale: 0.85, y: 40, rotateX: 10 }}
-                            animate={{ scale: 1, y: 0, rotateX: 0 }}
-                            exit={{ scale: 0.85, y: 40, rotateX: 10 }}
-                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            initial={{ scale: 0.95, y: 20, opacity: 0 }}
+                            animate={{ scale: 1, y: 0, opacity: 1 }}
+                            exit={{ scale: 0.95, y: 20, opacity: 0 }}
+                            transition={{ duration: 0.25, ease: "easeOut" }}
                             onClick={(e) => e.stopPropagation()}
                         >
-                            {/* Animated Border Glow */}
-                            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#667eea] via-[#764ba2] to-[#667eea] rounded-[26px] -z-10 blur-lg opacity-50 animate-pulse" />
+                            {/* Border Glow */}
+                            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#667eea] via-[#764ba2] to-[#667eea] rounded-[26px] -z-10 blur-lg opacity-40" />
 
                             {/* Close Button */}
                             <motion.button
@@ -70,8 +71,8 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
                                     >
                                         <span
                                             className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-[20px] text-[13px] font-semibold backdrop-blur-xl ${project.status === "current"
-                                                    ? "bg-green-500/20 border border-green-500/50 text-green-400 shadow-[0_0_20px_rgba(34,197,94,0.3)]"
-                                                    : "bg-indigo-500/20 border border-indigo-500/50 text-indigo-300 shadow-[0_0_20px_rgba(99,102,241,0.3)]"
+                                                ? "bg-green-500/20 border border-green-500/50 text-green-400 shadow-[0_0_20px_rgba(34,197,94,0.3)]"
+                                                : "bg-indigo-500/20 border border-indigo-500/50 text-indigo-300 shadow-[0_0_20px_rgba(99,102,241,0.3)]"
                                                 }`}
                                         >
                                             {project.status === "current" ? (
@@ -120,9 +121,9 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
                                     {/* Tech Stack */}
                                     <motion.div
                                         className="mb-8"
-                                        initial={{ opacity: 0, y: 20 }}
+                                        initial={{ opacity: 0, y: 15 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.25 }}
+                                        transition={{ delay: 0.1, duration: 0.3 }}
                                     >
                                         <h3 className="flex items-center gap-2.5 text-lg font-semibold text-white mb-4">
                                             <BsGearFill className="text-cyan-400" />
@@ -130,15 +131,12 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
                                         </h3>
                                         <div className="flex flex-wrap gap-2">
                                             {project.techStack?.map((tech, index) => (
-                                                <motion.span
+                                                <span
                                                     key={index}
                                                     className="inline-block px-3.5 py-2 bg-gradient-to-r from-indigo-500/15 to-purple-500/15 border border-indigo-500/25 rounded-lg text-purple-200 text-sm font-medium transition-all duration-300 hover:from-indigo-500/25 hover:to-purple-500/25 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(99,102,241,0.2)]"
-                                                    initial={{ opacity: 0, scale: 0.8 }}
-                                                    animate={{ opacity: 1, scale: 1 }}
-                                                    transition={{ delay: 0.3 + index * 0.05 }}
                                                 >
                                                     {tech}
-                                                </motion.span>
+                                                </span>
                                             ))}
                                         </div>
                                     </motion.div>
@@ -146,9 +144,9 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
                                     {/* Problem & Solution */}
                                     <motion.div
                                         className="grid md:grid-cols-2 gap-5 mb-8"
-                                        initial={{ opacity: 0, y: 20 }}
+                                        initial={{ opacity: 0, y: 15 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.35 }}
+                                        transition={{ delay: 0.15, duration: 0.3 }}
                                     >
                                         {/* Problem Card */}
                                         <div className="relative p-6 bg-slate-900/50 border border-amber-400/20 rounded-2xl overflow-hidden">
@@ -172,9 +170,9 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
                                     {project.challenges && project.challenges.length > 0 && (
                                         <motion.div
                                             className="mb-8"
-                                            initial={{ opacity: 0, y: 20 }}
+                                            initial={{ opacity: 0, y: 15 }}
                                             animate={{ opacity: 1, y: 0 }}
-                                            transition={{ delay: 0.4 }}
+                                            transition={{ delay: 0.2, duration: 0.3 }}
                                         >
                                             <h3 className="flex items-center gap-2.5 text-lg font-semibold text-white mb-4">
                                                 <IoWarning className="text-amber-400" />
@@ -182,32 +180,29 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
                                             </h3>
                                             <div className="space-y-4">
                                                 {project.challenges.map((challenge, index) => (
-                                                    <motion.div
+                                                    <div
                                                         key={index}
-                                                        className="bg-slate-900/40 border border-amber-400/15 border-l-[3px] border-l-amber-500 rounded-xl p-4.5 transition-all duration-300 hover:bg-slate-900/60 hover:border-amber-400/30"
-                                                        initial={{ opacity: 0, x: -20 }}
-                                                        animate={{ opacity: 1, x: 0 }}
-                                                        transition={{ delay: 0.45 + index * 0.1 }}
+                                                        className="bg-slate-900/40 border border-amber-400/15 border-l-[3px] border-l-amber-500 rounded-xl p-5 transition-all duration-300 hover:bg-slate-900/60 hover:border-amber-400/30"
                                                     >
-                                                        <div className="flex items-center gap-2.5 mb-3">
+                                                        <div className="flex items-center gap-2.5 mb-4">
                                                             <BsLightningChargeFill className="text-amber-400" />
                                                             <h4 className="text-[15px] font-semibold text-white">{challenge.title}</h4>
                                                         </div>
-                                                        <div className="flex flex-col gap-2.5">
+                                                        <div className="flex flex-col gap-4">
                                                             <div className="text-sm text-gray-400 leading-relaxed">
-                                                                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-500 uppercase mb-1">
+                                                                <span className="block text-[11px] font-semibold text-amber-500 uppercase mb-2">
                                                                     Problem:
                                                                 </span>
-                                                                <p>{challenge.description}</p>
+                                                                <p className="pl-0">{challenge.description}</p>
                                                             </div>
                                                             <div className="text-sm text-gray-400 leading-relaxed">
-                                                                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-green-500 uppercase mb-1">
+                                                                <span className="flex items-center gap-1 text-[11px] font-semibold text-green-500 uppercase mb-2">
                                                                     <RiToolsFill /> Solution:
                                                                 </span>
-                                                                <p>{challenge.solution}</p>
+                                                                <p className="pl-0">{challenge.solution}</p>
                                                             </div>
                                                         </div>
-                                                    </motion.div>
+                                                    </div>
                                                 ))}
                                             </div>
                                         </motion.div>
@@ -216,9 +211,9 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
                                     {/* Key Features */}
                                     <motion.div
                                         className="mb-8"
-                                        initial={{ opacity: 0, y: 20 }}
+                                        initial={{ opacity: 0, y: 15 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.5 }}
+                                        transition={{ delay: 0.25, duration: 0.3 }}
                                     >
                                         <h3 className="flex items-center gap-2.5 text-lg font-semibold text-white mb-4">
                                             <IoCheckmarkCircle className="text-emerald-400" />
@@ -226,18 +221,15 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
                                         </h3>
                                         <div className="grid md:grid-cols-2 gap-3">
                                             {project.features?.map((feature, index) => (
-                                                <motion.div
+                                                <div
                                                     key={index}
                                                     className="flex items-start gap-2.5 px-3.5 py-3 bg-slate-900/35 border border-green-500/10 rounded-xl transition-all duration-300 hover:bg-green-500/8 hover:border-green-500/20"
-                                                    initial={{ opacity: 0, x: -10 }}
-                                                    animate={{ opacity: 1, x: 0 }}
-                                                    transition={{ delay: 0.55 + index * 0.05 }}
                                                 >
                                                     <span className="flex-shrink-0 w-[18px] h-[18px] flex items-center justify-center bg-green-500/20 text-green-500 rounded-full text-[10px] font-bold">
                                                         ✓
                                                     </span>
                                                     <span className="text-gray-300 text-sm">{feature}</span>
-                                                </motion.div>
+                                                </div>
                                             ))}
                                         </div>
                                     </motion.div>
@@ -245,9 +237,9 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
                                     {/* Action Buttons */}
                                     <motion.div
                                         className="flex flex-wrap gap-4 pt-4 border-t border-white/10"
-                                        initial={{ opacity: 0, y: 20 }}
+                                        initial={{ opacity: 0, y: 15 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.6 }}
+                                        transition={{ delay: 0.3, duration: 0.3 }}
                                     >
                                         {project.github && (
                                             <a

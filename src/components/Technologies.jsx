@@ -5,7 +5,10 @@ import { skills } from "../constants";
 
 const Technologies = () => {
   return (
-    <section className="py-24 paddingX max-w-7xl mx-auto dark-background" id="technologies">
+    <section
+      className="py-24 paddingX max-w-7xl mx-auto dark-background"
+      id="technologies"
+    >
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +67,7 @@ const Technologies = () => {
                 />
               </div>
               {/* Tooltip - always at top */}
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-xl">
+              <div className="absolute -top-14 left-1/2 transform -translate-x-1/2 bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-xl">
                 {skill.name}
                 {/* Arrow pointing down */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-6px] w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-indigo-600"></div>

@@ -46,7 +46,8 @@ const Projects = () => {
           </span>
         </h2>
         <p className="text-gray-400 max-w-xl">
-          Showcasing my recent work in mobile apps, web platforms, and AI solutions.
+          Showcasing my recent work in mobile apps, web platforms, and AI
+          solutions.
         </p>
       </motion.div>
 
@@ -77,10 +78,11 @@ const Projects = () => {
               {/* Status Badge */}
               <div className="absolute top-2 left-2">
                 <span
-                  className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-xl text-[10px] font-semibold backdrop-blur-lg ${project.status === "current"
+                  className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-xl text-[10px] font-semibold backdrop-blur-lg ${
+                    project.status === "current"
                       ? "bg-green-500/20 border border-green-500/40 text-green-400"
                       : "bg-indigo-500/20 border border-indigo-500/40 text-indigo-300"
-                    }`}
+                  }`}
                 >
                   {project.status === "current" ? (
                     <IoRocket className="inline" size={10} />
@@ -137,7 +139,7 @@ const Projects = () => {
       >
         <Link
           to="/projects"
-          className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-gradient-to-r from-[#667eea] to-[#764ba2] rounded-xl text-white text-base font-semibold no-underline transition-all duration-300 shadow-[0_4px_20px_rgba(102,126,234,0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(102,126,234,0.5)]"
+          className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-gradient-to-r from-[#667eea] to-[#764ba2] rounded-xl text-white text-base font-semibold no-underline transition-all duration-300 shadow-[0_4px_20px_rgba(102,126,234,0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(102,126,234,0.5)] hover:no-underline"
         >
           View All Projects
           <FaArrowRight size={14} />

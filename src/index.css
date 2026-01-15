@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+
+  /* ========================================
+     SPACING UTILITIES
+     ======================================== */
+  .paddingX {
+    @apply sm:px-16 px-6;
+  }
+
+  .paddingY {
+    @apply sm:py-16 py-6;
+  }
+
+  .padding {
+    @apply sm:px-16 px-6 sm:py-16 py-10;
+  }
+
+  /* ========================================
+     TYPOGRAPHY UTILITIES
+     ======================================== */
+  .heading-text {
+    @apply sm:text-4xl text-3xl font-semibold sm:leading-snug;
+  }
+
+  .subhead-text {
+    @apply font-semibold sm:text-3xl text-xl relative;
+  }
+
+  /* ========================================
+     GRADIENT TEXT UTILITIES
+     ======================================== */
+  .gradient-text-vibrant {
+    @apply bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent;
+  }
+
+  .gradient-text-blue {
+    @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
+  }
+
+  .gradient-text-sunset {
+    @apply bg-gradient-to-r from-[#f093fb] to-[#f5576c] bg-clip-text text-transparent;
+  }
+
+  /* ========================================
+     GLASSMORPHISM UTILITIES
+     ======================================== */
+  .glass-card {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-2xl;
+  }
+
+  .glass-card-dark {
+    @apply backdrop-blur-xl bg-slate-900/60 border border-indigo-500/15 rounded-xl;
+  }
+
+  /* ========================================
+     BUTTON UTILITIES
+     ======================================== */
+  .btn-primary {
+    @apply inline-flex items-center gap-2.5 px-7 py-3.5 bg-gradient-to-r from-[#667eea] to-[#764ba2] rounded-xl text-white text-base font-semibold no-underline transition-all duration-300;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  }
+
+  .btn-primary:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2.5 px-6 py-3 bg-slate-900/60 border border-indigo-500/30 rounded-xl text-purple-200 text-sm font-medium no-underline transition-all duration-300 cursor-pointer;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-indigo-500/15 border-indigo-500/50 -translate-y-0.5;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ========================================
+     STATUS BADGE UTILITIES
+     ======================================== */
+  .badge-current {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-500/20 border border-green-500/40 text-green-400 rounded-full text-xs font-semibold backdrop-blur-lg;
+  }
+
+  .badge-completed {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 rounded-full text-xs font-semibold backdrop-blur-lg;
+  }
+
+  /* ========================================
+     TECH TAG UTILITIES
+     ======================================== */
+  .tech-tag {
+    @apply inline-block px-3 py-1.5 bg-gradient-to-r from-indigo-500/15 to-purple-500/15 border border-indigo-500/25 rounded-lg text-purple-200 text-xs font-medium transition-all duration-300;
+  }
+
+  .tech-tag:hover {
+    @apply from-indigo-500/25 to-purple-500/25 -translate-y-0.5;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+  }
+
+  .tech-tag-sm {
+    @apply inline-block px-1.5 py-0.5 bg-indigo-500/12 border border-indigo-500/20 rounded text-indigo-300 text-[9px] font-medium;
+  }
+
+  /* ========================================
+     CARD UTILITIES
+     ======================================== */
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:border-indigo-500/40;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3), 0 0 40px rgba(99, 102, 241, 0.1);
+  }
+
+  /* ========================================
+     TEXT CLAMP UTILITIES
+     ======================================== */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* ========================================
+   BACKGROUND STYLES (Cannot be utilities)
+   ======================================== */
+
+.grid-background {
+  background-color: #0a0e27;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  position: relative;
+}
+
+.grid-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.dark-background {
+  background-color: #0a0e27;
+  position: relative;
+}
+
+/* ========================================
+   FLOATING NAVBAR
+   ======================================== */
+
+.floating-navbar {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(10, 14, 39, 0.7);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* ========================================
+   SOCIAL ICONS
+   ======================================== */
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
+  color: #6366f1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* ========================================
+   EXPERIENCE SECTION
+   ======================================== */
+
+.experience-card {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+}
+
+/* ========================================
+   BLOCK CONTAINER (3D Cards)
+   ======================================== */
+
+.block-container {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  perspective: 500px;
+}
+
+.block-container .btn-back {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: inherit;
+  height: inherit;
+  transition: 0.3s ease;
+  transform-style: preserve-3d;
+  transform-origin: bottom right;
+  transform: rotateZ(8deg);
+  will-change: transform;
+  border-radius: 16px;
+}
+
+.block-container .btn-front {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: inherit;
+  height: inherit;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: 0.3s ease;
+  transform-style: preserve-3d;
+  transform-origin: top left;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.block-container:hover {
+  transform: translateY(-8px);
+}
+
+.block-container:hover>.btn-back {
+  transform: translateZ(20px) rotateZ(8deg) rotateX(-10deg) rotateY(-10deg);
+}
+
+.block-container:hover>.btn-front {
+  transform: translateZ(40px) translateY(-5px);
+  box-shadow: 0 16px 48px rgba(99, 102, 241, 0.3);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+/* Block container color themes */
+.block-container .btn-back-red {
+  background: linear-gradient(135deg, #ff4b1f -20%, #ff9068 120%);
+}
+
+.block-container .btn-back-green {
+  background: linear-gradient(135deg, #adfda2 -20%, #11d3f3 120%);
+}
+
+.block-container .btn-back-yellow {
+  background: linear-gradient(135deg, #f7971e -20%, #ffd200 120%);
+}
+
+.block-container .btn-back-blue {
+  background: linear-gradient(135deg, #0061ff -20%, #60efff 120%);
+}
+
+.block-container .btn-back-orange {
+  background: linear-gradient(135deg, #ff0f7b -20%, #f89b29 120%);
+}
+
+.block-container .btn-back-pink {
+  background: linear-gradient(135deg, #e81cff -20%, #40c9ff 120%);
+}
+
+.block-container .btn-back-black {
+  background: linear-gradient(135deg, #0a1647 -20%, #e4e7e4 120%);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}

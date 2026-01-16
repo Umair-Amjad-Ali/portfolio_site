@@ -202,7 +202,7 @@ const Hero = () => {
                                         <div className="w-3 h-3 rounded-full bg-red-500"></div>
                                         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                                         <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                                        <span className="ml-3 text-xs text-gray-400">developer.js</span>
+                                        <span className="ml-3 text-xs text-gray-400">Developer.js</span>
                                     </div>
 
                                     {/* Terminal Content */}

@@ -65,7 +65,7 @@ const Hero = () => {
                         rotate: [0, 90, 0],
                     }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="absolute top-200 left-10 w-32 h-32 border-2 border-indigo-500/30 rounded-lg"
+                    className="absolute top-28 left-24 w-32 h-32 border-2 border-indigo-500/30 rounded-lg"
                 />
                 <motion.div
                     animate={{

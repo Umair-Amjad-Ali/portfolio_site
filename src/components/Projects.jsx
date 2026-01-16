@@ -28,7 +28,7 @@ const Projects = () => {
 
   return (
     <section
-      className="sm:px-16 px-6 max-w-7xl mx-auto py-16 bg-[#0a0e27]"
+      className="paddingX max-w-7xl mx-auto py-16 bg-[#0a0e27]"
       id="work"
     >
       {/* Header - Left Aligned */}
@@ -78,11 +78,10 @@ const Projects = () => {
               {/* Status Badge */}
               <div className="absolute top-2 left-2">
                 <span
-                  className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-xl text-[10px] font-semibold backdrop-blur-lg ${
-                    project.status === "current"
-                      ? "bg-green-500/20 border border-green-500/40 text-green-400"
-                      : "bg-indigo-500/20 border border-indigo-500/40 text-indigo-300"
-                  }`}
+                  className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-xl text-[10px] font-semibold backdrop-blur-lg ${project.status === "current"
+                    ? "bg-green-500/20 border border-green-500/40 text-green-400"
+                    : "bg-indigo-500/20 border border-indigo-500/40 text-indigo-300"
+                    }`}
                 >
                   {project.status === "current" ? (
                     <IoRocket className="inline" size={10} />
@@ -153,7 +152,7 @@ const Projects = () => {
         onClose={() => setSelectedProject(null)}
       />
 
-      <hr className="border-slate-700 mt-16" />
+      {/* <hr className="border-slate-700 mt-16" /> */}
     </section>
   );
 };

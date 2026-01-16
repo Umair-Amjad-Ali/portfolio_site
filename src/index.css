@@ -13,11 +13,12 @@
 }
 
 @layer utilities {
+
   /* ========================================
      SPACING UTILITIES
      ======================================== */
   .paddingX {
-    @apply sm:px-2 px-2;
+    @apply sm:px-16 px-6;
   }
 
   .paddingY {
@@ -62,7 +63,7 @@
   }
 
   .glass-card-dark {
-    @apply backdrop-blur-xl bg-slate-900/60 border border-indigo-500/15 rounded-xl;
+    @apply backdrop-blur-xl bg-slate-900/60 border border-indigo-500/20 rounded-xl;
   }
 
   /* ========================================
@@ -83,7 +84,7 @@
   }
 
   .btn-secondary:hover {
-    @apply bg-indigo-500/15 border-indigo-500/50 -translate-y-0.5;
+    @apply bg-indigo-500/20 border-indigo-500/50 -translate-y-0.5;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   }
 
@@ -102,20 +103,20 @@
      TECH TAG UTILITIES
      ======================================== */
   .tech-tag {
-    @apply inline-block px-3 py-1.5 bg-gradient-to-r from-indigo-500/15 to-purple-500/15 border border-indigo-500/25 rounded-lg text-purple-200 text-xs font-medium transition-all duration-300;
+    @apply inline-block px-3 py-1.5 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 rounded-lg text-purple-200 text-xs font-medium transition-all duration-300;
   }
 
   .tech-tag:hover {
-    @apply from-indigo-500/25 to-purple-500/25 -translate-y-0.5;
+    @apply from-indigo-500/30 to-purple-500/30 -translate-y-0.5;
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
   }
 
   .tech-tag-sm {
-    @apply inline-block px-1.5 py-0.5 bg-indigo-500/12 border border-indigo-500/20 rounded text-indigo-300 text-[9px] font-medium;
+    @apply inline-block px-1.5 py-0.5 bg-indigo-500/10 border border-indigo-500/20 rounded text-indigo-300 text-[9px] font-medium;
   }
 
   /* ========================================
-     CARD UTILITIES
+     CARD UTILITIE
      ======================================== */
   .card-hover {
     @apply transition-all duration-300 hover:-translate-y-1.5 hover:border-indigo-500/40;
@@ -146,10 +147,8 @@
 
 .grid-background {
   background-color: #0a0e27;
-  background-image: linear-gradient(
-      rgba(99, 102, 241, 0.1) 1px,
-      transparent 1px
-    ),
+  background-image: linear-gradient(rgba(99, 102, 241, 0.1) 1px,
+      transparent 1px),
     linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
   position: relative;
@@ -162,11 +161,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(99, 102, 241, 0.05) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at 50% 50%,
+      rgba(99, 102, 241, 0.05) 0%,
+      transparent 70%);
   pointer-events: none;
 }
 
@@ -272,11 +269,11 @@
   transform: translateY(-8px);
 }
 
-.block-container:hover > .btn-back {
+.block-container:hover>.btn-back {
   transform: translateZ(20px) rotateZ(8deg) rotateX(-10deg) rotateY(-10deg);
 }
 
-.block-container:hover > .btn-front {
+.block-container:hover>.btn-front {
   transform: translateZ(40px) translateY(-5px);
   box-shadow: 0 16px 48px rgba(99, 102, 241, 0.3);
   border-color: rgba(99, 102, 241, 0.4);
@@ -380,4 +377,133 @@
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* ========================================
+   BLOG INFINITE SCROLL
+   ======================================== */
+
+.blog-scroll-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-scroll-track {
+  display: flex;
+  gap: 1.5rem;
+  padding-block: 2rem;
+  animation: infinite-scroll 50s linear infinite;
+  will-change: transform;
+}
+
+.blog-scroll-track:hover {
+  animation-play-state: paused;
+}
+
+.blog-card-wrapper {
+  flex: 0 0 380px;
+  min-width: 380px;
+}
+
+@media (max-width: 640px) {
+  .blog-card-wrapper {
+    flex: 0 0 300px;
+    min-width: 300px;
+  }
+}
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-380px * 8 - 1.5rem * 8));
+  }
+}
+
+@media (max-width: 640px) {
+  @keyframes infinite-scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-300px * 8 - 1.5rem * 8));
+    }
+  }
+}
+
+/* ========================================
+   CONTACT FORM STYLES
+   ======================================== */
+
+.contact-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.contact-input:focus {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.contact-input::placeholder {
+  color: rgba(156, 163, 175, 0.5);
+}
+
+.contact-textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  outline: none;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-textarea:focus {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.contact-textarea::placeholder {
+  color: rgba(156, 163, 175, 0.5);
+}
+
+/* Blog Content Styles */
+.prose h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose h3 {
+  color: #e5e7eb;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  color: #d1d5db;
+  line-height: 1.75;
+  margin-bottom: 1rem;
 }

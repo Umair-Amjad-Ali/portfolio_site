@@ -52,7 +52,10 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
                             </motion.button>
 
                             {/* Scrollable Content */}
-                            <div className="overflow-y-auto max-h-[95vh] scrollbar-thin scrollbar-track-slate-900/50 scrollbar-thumb-indigo-500/40">
+                            <div
+                                className="overflow-y-auto max-h-[95vh] overscroll-contain scrollbar-thin scrollbar-track-slate-900/50 scrollbar-thumb-indigo-500/40"
+                                style={{ scrollbarGutter: "stable" }}
+                            >
                                 {/* Hero Section */}
                                 <div className="relative h-56 md:h-72 overflow-hidden">
                                     <img

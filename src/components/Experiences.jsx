@@ -37,12 +37,12 @@ const Experiences = () => {
 
           {/* Navigation Rail (Desktop) / Horizontal Scroll (Mobile) */}
           <div className="md:w-1/3 flex flex-col gap-6">
-            <div className="flex md:flex-col overflow-x-auto md:overflow-visible gap-4 pb-4 md:pb-0 scrollbar-hide">
+            <div className="flex flex-col gap-4">
               {experiences.map((experience, index) => (
                 <button
                   key={index}
                   onClick={() => setActiveTab(index)}
-                  className={`group flex items-center gap-4 p-4 rounded-xl border transition-all duration-300 min-w-[280px] md:min-w-0 text-left relative overflow-hidden ${activeTab === index
+                  className={`group flex items-center gap-4 p-4 rounded-xl border transition-all duration-300 w-full text-left relative overflow-hidden ${activeTab === index
                     ? "bg-slate-800/80 border-indigo-500/50 shadow-lg shadow-indigo-500/10"
                     : "bg-slate-900/40 border-slate-800 hover:bg-slate-800/60 hover:border-slate-700"
                     }`}

@@ -173,10 +173,6 @@ export const skills = [
     name: "CSS",
   },
   {
-    imageUrl: html,
-    name: "HTML",
-  },
-  {
     imageUrl: motion,
     name: "Framer Motion",
   },
@@ -947,4 +943,3 @@ export const blogs = [
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
   },
 ];
-

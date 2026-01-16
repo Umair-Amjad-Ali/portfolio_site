@@ -79,6 +79,7 @@ const Navbar = () => {
             >
               <a
                 href={`#${link.id}`}
+                className="no-underline hover:no-underline"
                 onClick={(e) => e.preventDefault()}
               >
                 {link.title}
@@ -95,7 +96,7 @@ const Navbar = () => {
               e.preventDefault();
               handleNavClick("contact", "Contact");
             }}
-            className="px-6 py-2.5 bg-transparent border-2 border-white/20 hover:border-indigo-500/50 rounded-full text-white text-[14px] font-medium transition-all duration-300 hover:bg-indigo-500/10"
+            className="px-6 py-2.5 bg-transparent border-2 border-white/20 hover:border-indigo-500/50 rounded-full text-white text-[14px] font-medium transition-all duration-300 hover:bg-indigo-500/10 no-underline hover:no-underline"
           >
             Let's Connect
           </a>
@@ -157,7 +158,7 @@ const Navbar = () => {
                         >
                           <a
                             href={`#${link.id}`}
-                            className={`flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${active === link.title
+                            className={`flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 no-underline hover:no-underline ${active === link.title
                               ? "bg-indigo-500/15 text-indigo-400 border border-indigo-500/30"
                               : "text-gray-400 hover:text-white hover:bg-white/5"
                               }`}

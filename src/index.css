@@ -402,14 +402,14 @@ html {
 }
 
 .blog-card-wrapper {
-  flex: 0 0 380px;
-  min-width: 380px;
+  flex: 0 0 320px;
+  min-width: 320px;
 }
 
 @media (max-width: 640px) {
   .blog-card-wrapper {
-    flex: 0 0 300px;
-    min-width: 300px;
+    flex: 0 0 280px;
+    min-width: 280px;
   }
 }
 
@@ -419,7 +419,7 @@ html {
   }
 
   100% {
-    transform: translateX(calc(-380px * 8 - 1.5rem * 8));
+    transform: translateX(calc(-320px * 8 - 1.5rem * 8));
   }
 }
 
@@ -430,7 +430,7 @@ html {
     }
 
     100% {
-      transform: translateX(calc(-300px * 8 - 1.5rem * 8));
+      transform: translateX(calc(-280px * 8 - 1.5rem * 8));
     }
   }
 }

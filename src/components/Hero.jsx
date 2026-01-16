@@ -106,7 +106,7 @@ const Hero = () => {
                 />
             </div>
 
-            <div className="relative z-10 flex items-center justify-center min-h-screen paddingX pt-20">
+            <div className="relative z-10 flex items-center justify-center min-h-screen paddingX pt-28 pb-32 lg:pt-20 lg:pb-0">
                 <div className="max-w-7xl mx-auto w-full">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
 

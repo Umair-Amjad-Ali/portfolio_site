@@ -321,6 +321,30 @@ export const projects = [
       "Centralized fleet and workforce controls with remote security",
       "Analytics tools to visualize sales trends and PDF financial reports",
     ],
+    modules: [
+      {
+        title: "Mobile Application",
+        subtitle: "Field Operations",
+        icon: "mobile",
+        features: [
+          "Rank-based functionality access (Manager vs. Driver roles)",
+          "Offline-first POS with auto-sync recovery",
+          "Barcode scanning for instant inventory lookup",
+          "Real-time stock transfer requests between trucks"
+        ]
+      },
+      {
+        title: "Admin Dashboard",
+        subtitle: "Command Center",
+        icon: "dashboard",
+        features: [
+          "Full control over app permissions and feature toggles",
+          "Live fleet tracking and technician monitoring",
+          "Multi-level inventory management (Warehouse → Truck)",
+          "Comprehensive financial analytics and exportable reports"
+        ]
+      }
+    ],
     link: "",
     github: "",
   },
@@ -363,6 +387,19 @@ export const projects = [
       "Daily calorie intake and hydration tracking",
       "Goal-based logic for automatic calorie target adjustments",
       "Progress tracking and health insights dashboard",
+    ],
+    modules: [
+      {
+        title: "User Application",
+        subtitle: "Personal Health Companion",
+        icon: "mobile",
+        features: [
+          "Snap & Track AI Food Analysis",
+          "Real-time hydration and calorie logging",
+          "Personalized goal setting and progress charts",
+          "Barcode scanner for packaged foods"
+        ]
+      }
     ],
     link: "",
     github: "",
@@ -407,6 +444,30 @@ export const projects = [
       "Google Mobile Ads and subscription model integration",
       "Firebase Cloud Messaging for real-time push notifications",
     ],
+    modules: [
+      {
+        title: "Fitness Application",
+        subtitle: "User Experience",
+        icon: "mobile",
+        features: [
+          "Interactive workout video streaming",
+          "Real-time social feed and chat system",
+          "Gamified progress tracking (Streaks/Badges)",
+          "Subscription management & simple payments"
+        ]
+      },
+      {
+        title: "Growth Engine",
+        subtitle: "Engagement System",
+        icon: "dashboard",
+        features: [
+          "Automated push notification campaigns",
+          "Dynamic leaderboard calculation engine",
+          "Ad mediation and revenue tracking",
+          "User retention analytics dashboard"
+        ]
+      }
+    ],
     link: "",
     github: "",
   },
@@ -449,6 +510,30 @@ export const projects = [
       "Comprehensive MRI pre-processing pipeline",
       "Interactive result visualization interface",
       "End-to-end diagnostic workflow automation",
+    ],
+    modules: [
+      {
+        title: "Deep Learning Pipeline",
+        subtitle: "Core AI Engine",
+        icon: "dashboard",
+        features: [
+          "Res U-Net for pixel-perfect segmentation",
+          "Custom CNN architecture for classification",
+          "Automated MRI image pre-processing",
+          "Model training with transfer learning"
+        ]
+      },
+      {
+        title: "Diagnostic Interface",
+        subtitle: "Clinician Dashboard",
+        icon: "laptop",
+        features: [
+          "Interactive MRI slice viewer",
+          "Real-time inference and result overlay",
+          "Patient report generation system",
+          "Explainable AI heatmap visualization"
+        ]
+      }
     ],
     link: "",
     github: "",
@@ -496,6 +581,30 @@ export const additionalProjects = [
       "Customer management with purchase history",
       "Role-based access control for team members",
       "Export reports to PDF and Excel formats",
+    ],
+    modules: [
+      {
+        title: "Admin Portal",
+        subtitle: "Management Interface",
+        icon: "laptop",
+        features: [
+          "Interactive analytics dashboard",
+          "Bulk order & inventory management",
+          "Customer CRM & support tools",
+          "Team permission settings"
+        ]
+      },
+      {
+        title: "Backend Services",
+        subtitle: "REST API & Logic",
+        icon: "dashboard",
+        features: [
+          "Secure authentication & authorization",
+          "Real-time websocket event handling",
+          "Automated pdf report generation",
+          "Database optimization & indexing"
+        ]
+      }
     ],
     link: "https://github.com/Umair-Amjad-Ali/ecommerce-dashboard",
     github: "https://github.com/Umair-Amjad-Ali/ecommerce-dashboard",
@@ -546,6 +655,30 @@ export const additionalProjects = [
       "File attachments and comment threads",
       "Email and push notification integrations",
     ],
+    modules: [
+      {
+        title: "Client Application",
+        subtitle: "Frontend Interface",
+        icon: "laptop",
+        features: [
+          "Drag-and-drop task management UI",
+          "Real-time collaboration markers",
+          "Interactive analytics charts",
+          "Responsive team dashboard"
+        ]
+      },
+      {
+        title: "Real-time Server",
+        subtitle: "Backend System",
+        icon: "dashboard",
+        features: [
+          "Socket.io event management",
+          "Efficient database queries with Prisma",
+          "Operational transformation logic",
+          "Automated email background jobs"
+        ]
+      }
+    ],
     link: "",
     github: "https://github.com/Umair-Amjad-Ali/task-manager",
   },
@@ -594,6 +727,19 @@ export const additionalProjects = [
       "Multiple location bookmarks",
       "Offline mode with cached weather data",
     ],
+    modules: [
+      {
+        title: "Mobile App",
+        subtitle: "User Interface",
+        icon: "mobile",
+        features: [
+          "Location-aware weather visualization",
+          "Dynamic animations & background effects",
+          "Smart activity recommendation engine",
+          "Offline data persistence layer"
+        ]
+      }
+    ],
     link: "",
     github: "https://github.com/Umair-Amjad-Ali/weather-app",
   },
@@ -637,6 +783,19 @@ export const additionalProjects = [
       "Save favorites and create shopping lists",
       "Weekly meal planning with calendar view",
     ],
+    modules: [
+      {
+        title: "Recipe App",
+        subtitle: "Culinary Companion",
+        icon: "mobile",
+        features: [
+          "Smart ingredient matching algorithm",
+          "Interactive cooking timer & guides",
+          "Offline recipe database sync",
+          "Nutritional data visualization"
+        ]
+      }
+    ],
     link: "",
     github: "https://github.com/Umair-Amjad-Ali/recipe-finder",
   },
@@ -679,6 +838,30 @@ export const additionalProjects = [
       "Image optimization via Cloudinary",
       "SEO meta tags and sitemap generation",
       "One-click deployment with custom domains",
+    ],
+    modules: [
+      {
+        title: "Builder Interface",
+        subtitle: "Visual Editor",
+        icon: "laptop",
+        features: [
+          "Drag-and-drop WYSIWYG editor",
+          "Live component preview engine",
+          "Theme customization controls",
+          "Asset upload & optimization tool"
+        ]
+      },
+      {
+        title: "Deployment Service",
+        subtitle: "Cloud Infrastructure",
+        icon: "dashboard",
+        features: [
+          "Automated Vercel deployment pipeline",
+          "Custom domain mapping logic",
+          "Dynamic site generation (ISR)",
+          "SEO optimization scripts"
+        ]
+      }
     ],
     link: "",
     github: "https://github.com/Umair-Amjad-Ali/portfolio-generator",

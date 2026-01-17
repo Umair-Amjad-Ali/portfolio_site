@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoClose, IoCheckmarkCircle, IoRocket, IoWarning } from "react-icons/io5";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaMobileAlt, FaLaptopCode } from "react-icons/fa";
 import { HiLightBulb } from "react-icons/hi";
 import { BsGearFill, BsLightningChargeFill } from "react-icons/bs";
 import { RiToolsFill } from "react-icons/ri";
@@ -108,23 +108,25 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
 
                                     {/* Problem & Solution */}
                                     <div className="grid md:grid-cols-2 gap-6">
-                                        <div className="p-5 bg-white/5 border border-white/10 rounded-xl">
-                                            <div className="flex items-center gap-2 mb-3 text-amber-400">
-                                                <HiLightBulb size={20} />
-                                                <h3 className="font-semibold text-white">The Problem</h3>
+                                        <div className="group relative p-6 bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden hover:border-red-500/30 transition-all duration-300">
+                                            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-red-500 to-pink-600 opacity-60 group-hover:opacity-100 transition-opacity" />
+                                            <div className="relative z-10">
+                                                <p className="text-xs font-bold text-red-500 tracking-widest uppercase mb-2">The Challenge</p>
+                                                <h3 className="text-xl font-bold text-white mb-3">The Problem</h3>
+                                                <p className="text-gray-400 text-sm leading-relaxed">
+                                                    {project.problem}
+                                                </p>
                                             </div>
-                                            <p className="text-gray-400 text-sm leading-relaxed">
-                                                {project.problem}
-                                            </p>
                                         </div>
-                                        <div className="p-5 bg-white/5 border border-white/10 rounded-xl">
-                                            <div className="flex items-center gap-2 mb-3 text-green-400">
-                                                <IoRocket size={20} />
-                                                <h3 className="font-semibold text-white">The Solution</h3>
+                                        <div className="group relative p-6 bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden hover:border-yellow-500/30 transition-all duration-300">
+                                            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-yellow-400 to-orange-500 opacity-60 group-hover:opacity-100 transition-opacity" />
+                                            <div className="relative z-10">
+                                                <p className="text-xs font-bold text-yellow-500 tracking-widest uppercase mb-2">The Logic</p>
+                                                <h3 className="text-xl font-bold text-white mb-3">The Solution</h3>
+                                                <p className="text-gray-400 text-sm leading-relaxed">
+                                                    {project.solution}
+                                                </p>
                                             </div>
-                                            <p className="text-gray-400 text-sm leading-relaxed">
-                                                {project.solution}
-                                            </p>
                                         </div>
                                     </div>
 
@@ -158,20 +160,63 @@ const ProjectDetailModal = ({ project, isOpen, onClose }) => {
                                         </div>
                                     )}
 
-                                    {/* Key Features */}
+                                    {/* Project Modules / Key Features */}
                                     <div>
-                                        <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-4">
-                                            <IoCheckmarkCircle className="text-emerald-400" />
-                                            Key Features
-                                        </h3>
-                                        <div className="grid sm:grid-cols-2 gap-3">
-                                            {project.features?.map((feature, index) => (
-                                                <div key={index} className="flex items-start gap-3 p-3 bg-white/5 rounded-lg border border-white/5">
-                                                    <IoCheckmarkCircle className="text-emerald-400 shrink-0 mt-0.5" />
-                                                    <span className="text-gray-300 text-sm">{feature}</span>
+                                        {project.modules ? (
+                                            <div className="space-y-4">
+                                                <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-4">
+                                                    <IoRocket className="text-emerald-400" />
+                                                    Project Architecture
+                                                </h3>
+                                                <div className={`grid gap-4 ${project.modules.length > 1 ? 'md:grid-cols-2' : 'grid-cols-1'}`}>
+                                                    {project.modules.map((module, index) => (
+                                                        <div
+                                                            key={index}
+                                                            className={`bg-slate-900 border border-slate-700 rounded-xl p-6 relative overflow-hidden group ${index % 2 === 0 ? 'hover:border-indigo-500/50' : 'hover:border-pink-500/50'} transition-all duration-300`}
+                                                        >
+                                                            {/* Colored Top Accent */}
+                                                            <div className={`absolute top-0 left-0 w-full h-1 ${index % 2 === 0 ? 'bg-gradient-to-r from-indigo-500 to-cyan-500' : 'bg-gradient-to-r from-pink-500 to-purple-500'}`} />
+
+                                                            {/* Module Header */}
+                                                            <div className="mb-4">
+                                                                <p className={`text-[10px] font-bold tracking-widest uppercase mb-1 ${index % 2 === 0 ? 'text-indigo-400' : 'text-pink-400'}`}>
+                                                                    {module.subtitle}
+                                                                </p>
+                                                                <h4 className="text-xl font-bold text-white flex items-center gap-2">
+                                                                    {module.icon === 'mobile' ? <FaMobileAlt size={18} /> : <FaLaptopCode size={18} />}
+                                                                    {module.title}
+                                                                </h4>
+                                                            </div>
+
+                                                            {/* Module Features */}
+                                                            <ul className="space-y-3">
+                                                                {module.features.map((feature, fIndex) => (
+                                                                    <li key={fIndex} className="flex gap-3 text-sm text-gray-300">
+                                                                        <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${index % 2 === 0 ? 'bg-indigo-500' : 'bg-pink-500'}`} />
+                                                                        {feature}
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    ))}
                                                 </div>
-                                            ))}
-                                        </div>
+                                            </div>
+                                        ) : (
+                                            <div>
+                                                <h3 className="flex items-center gap-2 text-lg font-semibold text-white mb-4">
+                                                    <IoCheckmarkCircle className="text-emerald-400" />
+                                                    Key Features
+                                                </h3>
+                                                <div className="grid sm:grid-cols-2 gap-3">
+                                                    {project.features?.map((feature, index) => (
+                                                        <div key={index} className="flex items-start gap-3 p-3 bg-white/5 rounded-lg border border-white/5 hover:border-white/10 transition-colors">
+                                                            <IoCheckmarkCircle className="text-emerald-400 shrink-0 mt-0.5" />
+                                                            <span className="text-gray-300 text-sm">{feature}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
 
                                     {/* Action Buttons */}

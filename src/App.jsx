@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Hero, Navbar } from "./components";
+import { Hero, Navbar, About } from "./components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Technologies, Experiences, Projects, Blogs, Contact } from "./components";
 import AllProjects from "./components/AllProjects";
@@ -16,6 +16,7 @@ const App = () => {
           element={
             <div className="dark-background min-h-screen">
               <Hero />
+              <About />
               <Technologies />
               <Experiences />
               <Projects />

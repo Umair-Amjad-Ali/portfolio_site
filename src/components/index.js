@@ -1,5 +1,6 @@
 import Hero from "./Hero";
 import Navbar from "./Navbar";
+import About from "./About";
 import Technologies from "./Technologies";
 import Experiences from "./Experiences";
 import Projects from "./Projects";
@@ -12,6 +13,7 @@ import ProjectDetailModal from "./ProjectDetailModal";
 export {
   Navbar,
   Hero,
+  About,
   Technologies,
   Experiences,
   Projects,

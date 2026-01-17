@@ -18,10 +18,10 @@ const Footer = () => {
 
             <div className="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center gap-1.5">
                 <p className="text-gray-400 text-sm text-center font-light">
-                    © {new Date().getFullYear()} Umair Amjad Ali. All rights reserved.
+                    © {new Date().getFullYear()} Umair Amjad. All rights reserved.
                 </p>
                 <p className="text-[10px] text-gray-500 text-center tracking-wide">
-                    Designed & Built with <span className="text-red-500 text-xs align-middle animate-pulse">♥</span>
+                    Designed & Built with Experience
                 </p>
             </div>
         </footer>

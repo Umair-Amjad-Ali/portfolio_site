@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { projects, additionalProjects } from "../constants";
-import { FaArrowLeft, FaEye } from "react-icons/fa";
 import { IoRocket } from "react-icons/io5";
+import { FaArrowLeft, FaEye, FaLaptopCode, FaMobileAlt } from "react-icons/fa";
 import ProjectDetailModal from "./ProjectDetailModal";
 
 const AllProjects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const allProjects = [...projects, ...additionalProjects];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -28,8 +32,12 @@ const AllProjects = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0e27] py-20">
-      <div className="sm:px-16 px-6 max-w-7xl mx-auto">
+    <div className="min-h-screen bg-[#0a0e27] pt-32 pb-12 px-6 sm:px-16 relative overflow-hidden">
+      {/* Background Gradients */}
+      <div className="fixed top-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="fixed bottom-0 right-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
           className="mb-12"
@@ -39,11 +47,22 @@ const AllProjects = () => {
         >
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 hover:no-underline mb-6 transition-colors no-underline"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700 rounded-lg text-indigo-400 hover:text-indigo-300 mb-8 transition-all group backdrop-blur-sm"
           >
-            <FaArrowLeft />
+            <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
             Back to Home
           </Link>
+
+          <div className="flex flex-wrap gap-3 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold">
+              <FaLaptopCode />
+              <span>Full-Stack Systems</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs font-semibold">
+              <FaMobileAlt />
+              <span>Mobile-First</span>
+            </div>
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             All{" "}
             <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent">
@@ -87,11 +106,10 @@ const AllProjects = () => {
                 {project.status && (
                   <div className="absolute top-2 left-2">
                     <span
-                      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-xl text-[10px] font-semibold backdrop-blur-lg ${
-                        project.status === "current"
-                          ? "bg-green-500/20 border border-green-500/40 text-green-400"
-                          : "bg-indigo-500/20 border border-indigo-500/40 text-indigo-300"
-                      }`}
+                      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-xl text-[10px] font-semibold backdrop-blur-lg ${project.status === "current"
+                        ? "bg-green-500/20 border border-green-500/40 text-green-400"
+                        : "bg-indigo-500/20 border border-indigo-500/40 text-indigo-300"
+                        }`}
                     >
                       {project.status === "current" ? (
                         <>

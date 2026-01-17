@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { projects } from "../constants";
-import { FaArrowRight, FaEye } from "react-icons/fa";
 import { IoRocket } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { FaArrowRight, FaEye, FaMobileAlt, FaLaptopCode, FaGlobe, FaDatabase } from "react-icons/fa";
 import ProjectDetailModal from "./ProjectDetailModal";
 
 const Projects = () => {
@@ -28,7 +28,7 @@ const Projects = () => {
 
   return (
     <section
-      className="paddingX w-full py-16 bg-[#0a0e27]"
+      className="paddingX w-full py-14 bg-[#0a0e27]"
       id="work"
     >
       <div className="max-w-7xl mx-auto">
@@ -40,6 +40,16 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-left mb-12"
         >
+          <div className="flex flex-wrap gap-3 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold">
+              <FaLaptopCode />
+              <span>Full-Stack Systems</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs font-semibold">
+              <FaMobileAlt />
+              <span>Mobile-First</span>
+            </div>
+          </div>
           <h2 className="sm:text-4xl text-3xl font-semibold sm:leading-snug text-white mb-3 flex items-center gap-2">
             Featured{" "}
             <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent font-semibold drop-shadow-sm">

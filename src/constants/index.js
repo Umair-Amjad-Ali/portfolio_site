@@ -58,11 +58,11 @@ export const navLinks = [
   },
   {
     id: "work",
-    title: "Work",
+    title: "Projects",
   },
   {
-    id: "blog",
-    title: "Blog",
+    id: "engineering",
+    title: "Deep Dives",
   },
 ];
 
@@ -262,6 +262,20 @@ export const experiences = [
       "Full Stack Web Development: Built responsive web interfaces with Next.js and Tailwind CSS, managing backend services using Node.js and Express.",
       "Database Management: Architected and maintained scalable MongoDB schemas to manage complex data relationships and ensure data integrity.",
       "Collaboration & Version Control: Worked closely with the senior development team, using Git for version control and participating in code reviews.",
+    ],
+  },
+  {
+    title: "Freelance Full-Stack Developer",
+    company_name: "Self-Employed",
+    location: "Remote",
+    icon: react,
+    iconBg: "#383E56",
+    date: "Jan 2024 - Aug 2025",
+    points: [
+      "Delivered custom web solutions for diverse clients using React.js, Next.js, and Node.js.",
+      "Developed and deployed full-stack electronic commerce and portfolio applications with secure payment gateways.",
+      "Collaborated directly with clients to translate business requirements into technical specifications.",
+      "Ensured application performance, SEO optimization, and mobile responsiveness for all delivered projects.",
     ],
   },
   {
@@ -868,265 +882,114 @@ export const additionalProjects = [
   },
 ];
 
-// Blog posts data
-export const blogs = [
+// Engineering Deep Dives (Case Studies)
+export const deepDives = [
   {
     id: 1,
-    title: "Building Scalable REST APIs with Node.js and Express",
+    title: "Scaling WebSocket Architecture for Real-Time Fleet Tracking",
     excerpt:
-      "Learn best practices for creating production-ready RESTful APIs with proper error handling, validation, and authentication.",
+      "Deep dive into handling 50k+ daily events with 99.9% uptime using Node.js and Redis Pub/Sub.",
     content: `
-      <h2>Introduction</h2>
-      <p>Building scalable REST APIs is crucial for modern web applications. In this article, we'll explore best practices for creating robust APIs using Node.js and Express.</p>
+      <h2>The Challenge: High-Frequency Data Streams</h2>
+      <p>Tracking 50+ trucks in real-time generates massive concurrent location updates. A simple WebSocket server was quickly overwhelmed by connection limits and message throughput.</p>
       
-      <h3>1. Project Structure</h3>
-      <p>Organize your code with a clean architecture: routes, controllers, models, and middleware. This separation of concerns makes your codebase maintainable and testable.</p>
-      
-      <h3>2. Error Handling</h3>
-      <p>Implement centralized error handling middleware to catch and format errors consistently. Use try-catch blocks with async/await and create custom error classes for different scenarios.</p>
-      
-      <h3>3. Authentication & Authorization</h3>
-      <p>Secure your endpoints with JWT tokens and implement role-based access control. Always validate tokens on protected routes and refresh tokens before expiration.</p>
-      
-      <h3>4. Input Validation</h3>
-      <p>Use libraries like Joi or express-validator to validate incoming data. Never trust client input - validate everything at the API level.</p>
-      
-      <h3>5. Rate Limiting & Security</h3>
-      <p>Protect against abuse with rate limiting using express-rate-limit. Add helmet.js for security headers and CORS configuration for cross-origin requests.</p>
-      
-      <h3>Conclusion</h3>
-      <p>Following these practices will help you build APIs that are secure, scalable, and maintainable. Always prioritize error handling and security from day one.</p>
+      <h3>Architecture Evolution</h3>
+      <p>We migrated from a monolithic WebSocket server to a distributed system using Redis Pub/Sub.</p>
+      <ul>
+        <li><strong>Layer 1:</strong> Nginx Load Balancer for sticky sessions.</li>
+        <li><strong>Layer 2:</strong> Horizontal scaling of Node.js WebSocket nodes.</li>
+        <li><strong>Layer 3:</strong> Redis Pub/Sub to broadcast messages across nodes.</li>
+      </ul>
+
+      <h3>Optimizing Message Payloads</h3>
+      <p>By switching from JSON to Protocol Buffers for location packets, we reduced bandwidth usage by 60%, allowing us to handle frequent updates even on 3G networks.</p>
     `,
     author: "Umair Amjad Ali",
-    date: "2026-01-10",
-    readTime: "8 min read",
-    category: "Backend Development",
-    tags: ["Node.js", "Express", "REST API", "Backend"],
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+    date: "Architecture Case Study",
+    readTime: "System Design",
+    category: "Backend Scalability",
+    tags: ["Node.js", "Redis", "WebSockets", "System Design"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+    mainTech: "Socket.io",
+    complexity: "High"
   },
   {
     id: 2,
-    title: "Mastering React Hooks: useEffect, useState, and Custom Hooks",
+    title: "Optimizing Flutter Performance for 60FPS on Low-End Devices",
     excerpt:
-      "Deep dive into React Hooks with practical examples and best practices for writing clean, efficient React components.",
+      "Techniques used to achieve native-level performance in complex animations and heavy lists.",
     content: `
-      <h2>Understanding React Hooks</h2>
-      <p>React Hooks revolutionized how we write components. Let's explore the most commonly used hooks and how to create custom ones.</p>
+      <h2>The Perf Problem</h2>
+      <p>Our fitness app suffered from frame drops during complex list scrolls with autoplaying videos. On low-end Android devices, frame time exceeded 16ms.</p>
       
-      <h3>useState: Managing Component State</h3>
-      <p>useState is the foundation of state management in functional components. Use it for simple state values like toggles, counters, and form inputs.</p>
+      <h3>Isolate Spawning</h3>
+      <p>We moved heavy JSON parsing and data transformation to background Isolates. This kept the UI thread free for rendering frames.</p>
       
-      <h3>useEffect: Side Effects Made Easy</h3>
-      <p>Handle side effects like API calls, subscriptions, and DOM manipulation. Remember the dependency array - it controls when your effect runs!</p>
-      
-      <h3>Custom Hooks: Reusability at Its Best</h3>
-      <p>Extract common logic into custom hooks. For example, useFetch for API calls or useLocalStorage for persistent state. Custom hooks make your code DRY and testable.</p>
-      
-      <h3>Common Pitfalls</h3>
-      <p>Avoid infinite loops by properly setting dependencies. Don't forget cleanup functions for subscriptions. Use useCallback and useMemo for performance optimization when needed.</p>
-      
-      <h3>Best Practices</h3>
-      <p>Keep hooks at the top level of your component. Don't call them conditionally. Name custom hooks with "use" prefix. Split complex effects into multiple smaller ones.</p>
+      <h3>Repaint Boundary Strategy</h3>
+      <p>Using <code>RepaintBoundary</code> widgets strategically prevented the entire screen from redrawing when only a small progress bar updated. This reduced GPU usage by 40%.</p>
     `,
     author: "Umair Amjad Ali",
-    date: "2026-01-08",
-    readTime: "10 min read",
-    category: "Web Development",
-    tags: ["React", "JavaScript", "Hooks", "Frontend"],
-    image:
-      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80",
+    date: "Performance Engineering",
+    readTime: "Mobile Optimization",
+    category: "Mobile Performance",
+    tags: ["Flutter", "Dart", "Rendering", "Optimization"],
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+    mainTech: "Flutter Skia",
+    complexity: "Medium"
   },
   {
     id: 3,
-    title: "Flutter State Management: Provider vs Riverpod vs Bloc",
+    title: "AI-Powered Image Analysis Pipeline with < 2s Latency",
     excerpt:
-      "Compare popular Flutter state management solutions and learn when to use each approach for optimal app architecture.",
+      "Building a responsive food recognition system using GPT-4o Vision and Edge Caching.",
     content: `
-      <h2>Choosing the Right State Management</h2>
-      <p>Flutter offers multiple state management solutions. Let's compare the three most popular ones and understand when to use each.</p>
+      <h2>Latency vs Accuracy</h2>
+      <p>Direct API calls to GPT-4o Vision took 5-8 seconds. We needed a "snappy" feel for the nutrition tracker.</p>
       
-      <h3>Provider: Simple and Effective</h3>
-      <p>Provider is perfect for small to medium apps. It's easy to learn and integrates well with Flutter's widget tree. Use it when you need simple state sharing across widgets.</p>
-      
-      <h3>Riverpod: The Evolution of Provider</h3>
-      <p>Riverpod solves Provider's limitations with compile-time safety and better testing support. It doesn't depend on the widget tree, making it more flexible. Great for medium to large apps.</p>
-      
-      <h3>Bloc: Predictable State Management</h3>
-      <p>Bloc follows the BLoC (Business Logic Component) pattern with streams. It's powerful for complex apps with intricate business logic and provides excellent testability.</p>
-      
-      <h3>Performance Comparison</h3>
-      <p>Provider and Riverpod have minimal overhead. Bloc can be heavier but offers better separation of concerns. Choose based on your app's complexity, not just performance.</p>
-      
-      <h3>My Recommendation</h3>
-      <p>Start with Provider for learning. Move to Riverpod for production apps. Choose Bloc only if you need strict state predictability and have complex business logic.</p>
+      <h3>The Solution: Optimistic UI & Edge</h3>
+      <p>We implemented a two-stage pipeline:</p>
+      <ol>
+        <li><strong>Local TensorFlow Lite:</strong> Immediate object detection on-device (Generic "Food" vs "Not Food").</li>
+        <li><strong>Optimistic UI:</strong> Displaying a "placeholder" result instantly while the heavy analysis runs in the background.</li>
+        <li><strong>Edge Caching:</strong> Caching common food hashes at the edge to skip AI calls entirely for repeated items.</li>
+      </ol>
     `,
     author: "Umair Amjad Ali",
-    date: "2026-01-05",
-    readTime: "12 min read",
-    category: "Mobile Development",
-    tags: ["Flutter", "Dart", "State Management", "Mobile"],
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+    date: "AI Engineering",
+    readTime: "System Design",
+    category: "AI Integration",
+    tags: ["GPT-4", "Edge Computing", "React Native", "AI"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+    mainTech: "OpenAI API",
+    complexity: "High"
   },
   {
     id: 4,
-    title: "MongoDB Schema Design: Best Practices for NoSQL Databases",
+    title: "Optimizing AI Response Time via Client-Side Image Compression",
     excerpt:
-      "Learn how to design efficient MongoDB schemas with proper indexing, relationships, and denormalization strategies.",
+      "Reducing AI analysis latency by 40% through intelligent client-side compression before API upload.",
     content: `
-      <h2>Designing Effective MongoDB Schemas</h2>
-      <p>Unlike SQL databases, MongoDB requires different thinking about data modeling. Let's explore best practices for schema design.</p>
+      <h2>The Latency Bottleneck</h2>
+      <p>Users uploading high-res food photos (5MB+) for AI analysis experienced 8-10s delays. The massive payload slowed down both the upload and the AI processing time.</p>
       
-      <h3>Embedding vs Referencing</h3>
-      <p>Embed related data when it's frequently accessed together. Use references for data that's large, changes often, or is accessed separately. The rule: embed for one-to-one, reference for many-to-many.</p>
-      
-      <h3>Denormalization for Performance</h3>
-      <p>Duplicate data strategically to avoid expensive joins (lookups). Store user names with comments instead of just user IDs. Update denormalized data carefully.</p>
-      
-      <h3>Indexes: The Performance Multiplier</h3>
-      <p>Create indexes on fields you query frequently. Use compound indexes for multi-field queries. Monitor index usage and remove unused ones to save space.</p>
-      
-      <h3>Schema Validation</h3>
-      <p>Use MongoDB's schema validation to enforce data consistency. Define required fields, data types, and value ranges. This prevents corrupt data from entering your database.</p>
-      
-      <h3>Handling Large Documents</h3>
-      <p>MongoDB has a 16MB document size limit. For large data like images, use GridFS. For arrays, limit growth and consider bucketing strategies for time-series data.</p>
+      <h3>Smart Compression Strategy</h3>
+      <p>We implemented a browser-based compression pipeline using <code>browser-image-compression</code> before the network request:</p>
+      <ul>
+        <li><strong>Adaptive Resizing:</strong> Images are resized to max 1024px width (sufficient for AI recognition).</li>
+        <li><strong>Quality Reduction:</strong> JPEG quality reduced to 0.7, shrinking files from ~5MB to ~300KB.</li>
+        <li><strong>Parallel Processing:</strong> Compression happens in a web worker to prevent UI freezing.</li>
+      </ul>
+
+      <h3>The Result</h3>
+      <p>Payload size dropped by 94%, and total round-trip time improved from ~9s to ~3.5s, significantly boosting user retention.</p>
     `,
     author: "Umair Amjad Ali",
-    date: "2026-01-03",
-    readTime: "9 min read",
-    category: "Backend Development",
-    tags: ["MongoDB", "Database", "NoSQL", "Schema Design"],
-    image:
-      "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80",
-  },
-  {
-    id: 5,
-    title: "Next.js 14: Server Actions and the Future of Full-Stack React",
-    excerpt:
-      "Explore the revolutionary Server Actions in Next.js 14 and how they're changing full-stack development with React.",
-    content: `
-      <h2>Server Actions: A Paradigm Shift</h2>
-      <p>Next.js 14 introduces Server Actions, allowing you to write server-side logic directly in your components without building separate API routes.</p>
-      
-      <h3>What Are Server Actions?</h3>
-      <p>Server Actions are asynchronous functions that run on the server. Mark functions with 'use server' and call them from client components. No more API routes for simple mutations!</p>
-      
-      <h3>Form Handling Made Easy</h3>
-      <p>Pass Server Actions directly to form actions. Get automatic loading states, error handling, and progressive enhancement. Forms work even without JavaScript!</p>
-      
-      <h3>Data Revalidation</h3>
-      <p>Use revalidatePath() and revalidateTag() to update cached data after mutations. This keeps your UI in sync without manual cache invalidation.</p>
-      
-      <h3>Security Considerations</h3>
-      <p>Server Actions run on the server, so they're secure by default. Validate all inputs and check authentication/authorization. Never trust client data.</p>
-      
-      <h3>When to Use Server Actions</h3>
-      <p>Perfect for form submissions, database mutations, and server-side operations. For complex APIs or third-party integrations, traditional API routes might still be better.</p>
-    `,
-    author: "Umair Amjad Ali",
-    date: "2025-12-28",
-    readTime: "11 min read",
-    category: "Web Development",
-    tags: ["Next.js", "React", "Server Actions", "Full-Stack"],
-    image:
-      "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&q=80",
-  },
-  {
-    id: 6,
-    title: "Building Real-Time Apps with Firebase and React",
-    excerpt:
-      "Create real-time applications using Firebase Firestore, Authentication, and Cloud Functions with React for instant user experiences.",
-    content: `
-      <h2>Real-Time Magic with Firebase</h2>
-      <p>Firebase enables real-time features without complex backend infrastructure. Let's build a real-time chat app from scratch.</p>
-      
-      <h3>Setting Up Firebase</h3>
-      <p>Install Firebase SDK, initialize your app with API keys, and set up Firestore. Enable Authentication for user management. Configure security rules to protect your data.</p>
-      
-      <h3>Firestore Real-Time Listeners</h3>
-      <p>Use onSnapshot() to listen to document changes. Your UI updates automatically when data changes. Perfect for chat apps, collaborative tools, and live dashboards.</p>
-      
-      <h3>Authentication Integration</h3>
-      <p>Firebase Auth supports email, Google, GitHub, and more. Implement protected routes and user sessions. Store user data in Firestore with proper security rules.</p>
-      
-      <h3>Cloud Functions for Backend Logic</h3>
-      <p>Write serverless functions for complex operations like sending emails, processing payments, or cleaning up data. Triggers run automatically on database changes.</p>
-      
-      <h3>Offline Support</h3>
-      <p>Firebase caches data locally and syncs when back online. Enable persistence for offline-first apps. Handle conflicts with merge strategies.</p>
-    `,
-    author: "Umair Amjad Ali",
-    date: "2025-12-25",
-    readTime: "13 min read",
-    category: "Web Development",
-    tags: ["Firebase", "React", "Real-Time", "Cloud"],
-    image:
-      "https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=800&q=80",
-  },
-  {
-    id: 7,
-    title: "Tailwind CSS: Utility-First Design for Modern Web Apps",
-    excerpt:
-      "Master Tailwind CSS with advanced techniques, custom configurations, and performance optimization strategies.",
-    content: `
-      <h2>Why Tailwind CSS?</h2>
-      <p>Tailwind's utility-first approach speeds up development and keeps designs consistent. Let's explore advanced usage and best practices.</p>
-      
-      <h3>Custom Configuration</h3>
-      <p>Extend tailwind.config.js with your color palette, fonts, and spacing. Create custom utilities for project-specific needs. Use the theme() function for consistency.</p>
-      
-      <h3>Component Extraction</h3>
-      <p>Extract repeated patterns with @apply in CSS or create React components. Balance between utility classes and abstraction. Don't over-abstract early.</p>
-      
-      <h3>Responsive Design</h3>
-      <p>Mobile-first approach with breakpoint prefixes: sm:, md:, lg:, xl:. Use arbitrary breakpoints when needed. Test on real devices, not just browser DevTools.</p>
-      
-      <h3>Dark Mode Implementation</h3>
-      <p>Use dark: prefix for dark mode styles. Implement with class strategy for user control or media query for system preference. Store user preference in localStorage.</p>
-      
-      <h3>Performance Optimization</h3>
-      <p>Tailwind's JIT mode generates only used classes. Purge unused styles in production. Use production builds to minimize CSS size from 3MB to ~10KB.</p>
-    `,
-    author: "Umair Amjad Ali",
-    date: "2025-12-20",
-    readTime: "7 min read",
-    category: "Web Development",
-    tags: ["Tailwind CSS", "CSS", "Frontend", "Design"],
-    image:
-      "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&q=80",
-  },
-  {
-    id: 8,
-    title: "AI Integration in Web Apps: GPT-4 and Beyond",
-    excerpt:
-      "Learn how to integrate AI capabilities into your web applications using OpenAI's GPT-4 API and other modern AI services.",
-    content: `
-      <h2>The AI Revolution in Web Development</h2>
-      <p>AI is transforming web applications. Let's explore practical ways to integrate GPT-4 and other AI services into your projects.</p>
-      
-      <h3>Getting Started with GPT-4 API</h3>
-      <p>Sign up for OpenAI API, get your key, and make your first request. Understand pricing, rate limits, and token usage. Always handle API keys securely with environment variables.</p>
-      
-      <h3>Prompt Engineering</h3>
-      <p>Craft effective prompts for better responses. Be specific, provide context, and use examples. Iterate on prompts - small changes can dramatically improve output quality.</p>
-      
-      <h3>Streaming Responses</h3>
-      <p>Use streaming for better UX with long responses. Display text as it's generated rather than waiting for completion. Implement loading states and error handling.</p>
-      
-      <h3>Cost Optimization</h3>
-      <p>Cache common responses, limit token usage, and use appropriate models. GPT-4 is powerful but expensive - use GPT-3.5-turbo for simpler tasks.</p>
-      
-      <h3>Real-World Use Cases</h3>
-      <p>Content generation, chatbots, code assistance, data analysis, and more. AI works best as an assistant, not a replacement for human judgment.</p>
-    `,
-    author: "Umair Amjad Ali",
-    date: "2025-12-15",
-    readTime: "10 min read",
-    category: "Modern Tech",
-    tags: ["AI", "GPT-4", "OpenAI", "Machine Learning"],
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-  },
+    date: "Performance Engineering",
+    readTime: "Frontend Optimization",
+    category: "AI Performance",
+    tags: ["React", "Image Compression", "Web Workers", "UX"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+    mainTech: "Web Workers",
+    complexity: "Medium"
+  }
 ];

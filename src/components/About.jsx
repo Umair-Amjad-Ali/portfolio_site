@@ -83,7 +83,7 @@ const About = () => {
     ];
 
     return (
-        <section className="pt-24 pb-12 paddingX w-full dark-background relative overflow-hidden" id="about">
+        <section className="pt-14 pb-12 paddingX w-full dark-background relative overflow-hidden" id="about">
             {/* Ambient Background Effects */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
                 <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-purple-900/10 rounded-full blur-[100px] animate-pulse-slow" />

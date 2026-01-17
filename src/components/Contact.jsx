@@ -162,7 +162,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-24 paddingX w-full overflow-hidden"
+      className="relative py-12 paddingX w-full overflow-hidden"
     >
       {/* Hero-like Grid Background */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">

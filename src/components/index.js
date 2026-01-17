@@ -4,12 +4,13 @@ import About from "./About";
 import Technologies from "./Technologies";
 import Experiences from "./Experiences";
 import Projects from "./Projects";
-import Blogs from "./Blogs";
+import EngineeringDeepDives from "./EngineeringDeepDives";
 import Contact from "./Contact";
 import TextRotator from "./TextRotatar";
 import Button from "./CardButton";
 import ProjectDetailModal from "./ProjectDetailModal";
 import Footer from "./Footer";
+import AllDeepDives from "./AllDeepDives";
 
 
 
@@ -20,10 +21,11 @@ export {
   Technologies,
   Experiences,
   Projects,
-  Blogs,
+  EngineeringDeepDives,
   Contact,
   TextRotator,
   Button,
   ProjectDetailModal,
+  AllDeepDives,
   Footer,
 };

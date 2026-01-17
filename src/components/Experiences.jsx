@@ -7,7 +7,7 @@ const Experiences = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section className="paddingX w-full py-24 relative" id="experience">
+    <section className="paddingX w-full py-14 relative" id="experience">
       {/* Background Ambience */}
       <div className="absolute top-40 right-0 w-96 h-96 bg-indigo-900/20 rounded-full blur-3xl -z-10 pointer-events-none" />
       <div className="absolute bottom-40 left-0 w-72 h-72 bg-purple-900/10 rounded-full blur-3xl -z-10 pointer-events-none" />

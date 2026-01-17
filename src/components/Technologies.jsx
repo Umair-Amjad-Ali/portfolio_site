@@ -1,5 +1,5 @@
-import React from "react";
 import { motion } from "framer-motion";
+import { FaCode, FaLayerGroup, FaBolt } from "react-icons/fa";
 
 import { skills } from "../constants";
 
@@ -23,6 +23,16 @@ const Technologies = () => {
           transition={{ duration: 0.8 }}
           className="text-left mb-20 relative"
         >
+          <div className="flex flex-wrap gap-3 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold">
+              <FaCode />
+              <span>Modern Stack</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold">
+              <FaLayerGroup />
+              <span>Scalable Architecture</span>
+            </div>
+          </div>
           <div className="absolute left-0 -top-4 w-20 h-20 bg-indigo-500/20 rounded-full blur-xl animate-pulse" />
           <h2 className="heading-text text-white mb-4 relative z-10">
             Tech <span className="gradient-text-vibrant drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]">Arsenal</span>

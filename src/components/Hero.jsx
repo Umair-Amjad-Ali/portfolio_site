@@ -45,7 +45,7 @@ const Hero = () => {
     ];
 
     return (
-        <div className="relative min-h-screen overflow-hidden bg-[#0a0e27]" id="about">
+        <div className="relative min-h-screen overflow-hidden bg-[#0a0e27]" id="home">
             {/* Animated Grid Background */}
             <div className="absolute inset-0 opacity-20">
                 <div className="absolute inset-0" style={{

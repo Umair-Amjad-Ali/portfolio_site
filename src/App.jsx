@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Hero, Navbar, About } from "./components";
+import { Hero, Navbar, About, Footer } from "./components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Technologies, Experiences, Projects, Blogs, Contact } from "./components";
 import AllProjects from "./components/AllProjects";
@@ -28,6 +28,7 @@ const App = () => {
         <Route path="/projects" element={<AllProjects />} />
         <Route path="/blogs" element={<AllBlogs />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

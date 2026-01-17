@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCode, FaMobile, FaPalette, FaRocket, FaLaptopCode, FaHeart, FaCoffee, FaLightbulb, FaFire, FaGraduationCap, FaBriefcase, FaTrophy } from "react-icons/fa";
 import { BiCodeAlt } from "react-icons/bi";
+import { skills } from "../constants";
 
 const About = () => {
     const [activeTimeline, setActiveTimeline] = useState(0);
@@ -82,7 +83,7 @@ const About = () => {
     ];
 
     return (
-        <section className="py-24 paddingX w-full dark-background relative overflow-hidden" id="bio">
+        <section className="pt-24 pb-12 paddingX w-full dark-background relative overflow-hidden" id="about">
             {/* Ambient Background Effects */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
                 <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-purple-900/10 rounded-full blur-[100px] animate-pulse-slow" />
@@ -315,7 +316,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="mb-16"
+                    className="mb-12"
                 >
                     <div className="glass-card-dark p-8 md:p-12">
                         <div className="text-center mb-12">
@@ -359,6 +360,7 @@ const About = () => {
                         </div>
                     </div>
                 </motion.div>
+
             </div>
         </section>
     );

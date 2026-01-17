@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { GrMenu } from "react-icons/gr";
@@ -19,7 +19,7 @@ const iconComponents = {
 };
 
 const Navbar = () => {
-  const [active, setActive] = useState(" ");
+  const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -31,20 +31,66 @@ const Navbar = () => {
   const handleNavClick = (id, title) => {
     setActive(title);
     if (location.pathname === "/") {
-      document.getElementById(id)?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 80; // Navbar height offset
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: "smooth"
+        });
+      }
     } else {
       navigate("/");
       setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+        const element = document.getElementById(id);
+        if (element) {
+          const offset = 80;
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: elementPosition - offset,
+            behavior: "smooth"
+          });
+        }
       }, 100);
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      try {
+        const scrollY = window.scrollY;
+
+        // Only run on home page
+        if (location.pathname !== "/") return;
+
+        // Verify navLinks exists and is an array
+        if (!Array.isArray(navLinks)) return;
+
+        // Iterate through sections to find which one is in view
+        for (const link of navLinks) {
+          if (!link.id) continue;
+
+          const section = document.getElementById(link.id);
+
+          if (section) {
+            // Get section dimensions
+            const sectionTop = section.offsetTop - 150; // Offset for earlier triggering
+            const sectionHeight = section.offsetHeight;
+
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+              setActive(link.title);
+            }
+          }
+        }
+      } catch (error) {
+        console.error("Scroll spy error:", error);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [location.pathname]);
 
   return (
     <nav className="w-[95%] py-2 fixed z-30 floating-navbar rounded-full mx-auto max-w-7xl left-0 right-0 top-4">

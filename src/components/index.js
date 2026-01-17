@@ -9,6 +9,9 @@ import Contact from "./Contact";
 import TextRotator from "./TextRotatar";
 import Button from "./CardButton";
 import ProjectDetailModal from "./ProjectDetailModal";
+import Footer from "./Footer";
+
+
 
 export {
   Navbar,
@@ -22,4 +25,5 @@ export {
   TextRotator,
   Button,
   ProjectDetailModal,
+  Footer,
 };

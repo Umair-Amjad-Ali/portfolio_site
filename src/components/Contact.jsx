@@ -164,7 +164,18 @@ const Contact = () => {
       id="contact"
       className="relative py-24 paddingX w-full overflow-hidden"
     >
-      {/* Ambient Background */}
+      {/* Hero-like Grid Background */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+                linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px)
+            `,
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
+
+      {/* Ambient Background - Adjusted z-index if needed, but keeping it simple first */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
@@ -202,8 +213,8 @@ const Contact = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <form onSubmit={handleSubmit} className="space-y-12 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-12">
               <FormInput
                 label="IDENTITY"
                 type="text"

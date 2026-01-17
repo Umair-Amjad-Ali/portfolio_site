@@ -258,7 +258,7 @@ const About = () => {
                     transition={{ duration: 0.8 }}
                     className="mb-16"
                 >
-                    <div className="text-center mb-12">
+                    <div className="text-left mb-12">
                         <h3 className="text-3xl font-bold text-white mb-3">
                             My <span className="gradient-text-vibrant">Journey</span>
                         </h3>
@@ -319,11 +319,11 @@ const About = () => {
                     className="mb-12"
                 >
                     <div className="glass-card-dark p-8 md:p-12">
-                        <div className="text-center mb-12">
+                        <div className="text-left mb-12">
                             <h3 className="text-3xl font-bold text-white mb-4">
                                 What I Bring to <span className="gradient-text-vibrant">Your Team</span>
                             </h3>
-                            <p className="text-gray-400 text-base max-w-2xl mx-auto">
+                            <p className="text-gray-400 text-base max-w-2xl mx-0">
                                 More than just code — I bring solutions, collaboration, and a passion for excellence
                             </p>
                         </div>

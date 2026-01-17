@@ -2,7 +2,17 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="w-full relative py-6 bg-[#0a0e27]">
+        <footer className="w-full relative py-6 bg-[#0a0e27] overflow-hidden">
+            {/* Grid Background for Footer */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none">
+                <div className="absolute inset-0" style={{
+                    backgroundImage: `
+                        linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '50px 50px'
+                }}></div>
+            </div>
             {/* Gradient Divider */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
 

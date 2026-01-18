@@ -253,7 +253,7 @@ export const experiences = [
     title: "Application Software Developer",
     company_name: "SynticAI",
     location: "Bahawalpur",
-    icon: engimatix, // Using same icon temporarily
+    icon: engimatix,
     iconBg: "#6366f1",
     date: "Oct 2024 - Present",
     points: [
@@ -276,6 +276,7 @@ export const experiences = [
       "Developed and deployed full-stack electronic commerce and portfolio applications with secure payment gateways.",
       "Collaborated directly with clients to translate business requirements into technical specifications.",
       "Ensured application performance, SEO optimization, and mobile responsiveness for all delivered projects.",
+      "Worked with the other developer, using Git for version control and participating in code reviews.",
     ],
   },
   {
@@ -306,7 +307,7 @@ export const projects = [
     theme: "btn-back-blue",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    techStack: ["React Native", "Firebase", "Node.js", "Express", "MongoDB"],
+    techStack: ["Flutter", "Firebase", "Dart"],
     problem:
       "Battery service companies struggled with managing inventory across multiple trucks and stations, tracking field operations, and generating accurate financial reports in real-time.",
     solution:
@@ -344,8 +345,8 @@ export const projects = [
           "Rank-based functionality access (Manager vs. Driver roles)",
           "Offline-first POS with auto-sync recovery",
           "Barcode scanning for instant inventory lookup",
-          "Real-time stock transfer requests between trucks"
-        ]
+          "Real-time stock transfer requests between trucks",
+        ],
       },
       {
         title: "Admin Dashboard",
@@ -355,9 +356,9 @@ export const projects = [
           "Full control over app permissions and feature toggles",
           "Live fleet tracking and technician monitoring",
           "Multi-level inventory management (Warehouse → Truck)",
-          "Comprehensive financial analytics and exportable reports"
-        ]
-      }
+          "Comprehensive financial analytics and exportable reports",
+        ],
+      },
     ],
     link: "",
     github: "",
@@ -411,9 +412,9 @@ export const projects = [
           "Snap & Track AI Food Analysis",
           "Real-time hydration and calorie logging",
           "Personalized goal setting and progress charts",
-          "Barcode scanner for packaged foods"
-        ]
-      }
+          "Barcode scanner for packaged foods",
+        ],
+      },
     ],
     link: "",
     github: "",
@@ -467,8 +468,8 @@ export const projects = [
           "Interactive workout video streaming",
           "Real-time social feed and chat system",
           "Gamified progress tracking (Streaks/Badges)",
-          "Subscription management & simple payments"
-        ]
+          "Subscription management & simple payments",
+        ],
       },
       {
         title: "Growth Engine",
@@ -478,9 +479,9 @@ export const projects = [
           "Automated push notification campaigns",
           "Dynamic leaderboard calculation engine",
           "Ad mediation and revenue tracking",
-          "User retention analytics dashboard"
-        ]
-      }
+          "User retention analytics dashboard",
+        ],
+      },
     ],
     link: "",
     github: "",
@@ -534,8 +535,8 @@ export const projects = [
           "Res U-Net for pixel-perfect segmentation",
           "Custom CNN architecture for classification",
           "Automated MRI image pre-processing",
-          "Model training with transfer learning"
-        ]
+          "Model training with transfer learning",
+        ],
       },
       {
         title: "Diagnostic Interface",
@@ -545,9 +546,9 @@ export const projects = [
           "Interactive MRI slice viewer",
           "Real-time inference and result overlay",
           "Patient report generation system",
-          "Explainable AI heatmap visualization"
-        ]
-      }
+          "Explainable AI heatmap visualization",
+        ],
+      },
     ],
     link: "",
     github: "",
@@ -605,8 +606,8 @@ export const additionalProjects = [
           "Interactive analytics dashboard",
           "Bulk order & inventory management",
           "Customer CRM & support tools",
-          "Team permission settings"
-        ]
+          "Team permission settings",
+        ],
       },
       {
         title: "Backend Services",
@@ -616,9 +617,9 @@ export const additionalProjects = [
           "Secure authentication & authorization",
           "Real-time websocket event handling",
           "Automated pdf report generation",
-          "Database optimization & indexing"
-        ]
-      }
+          "Database optimization & indexing",
+        ],
+      },
     ],
     link: "https://github.com/Umair-Amjad-Ali/ecommerce-dashboard",
     github: "https://github.com/Umair-Amjad-Ali/ecommerce-dashboard",
@@ -678,8 +679,8 @@ export const additionalProjects = [
           "Drag-and-drop task management UI",
           "Real-time collaboration markers",
           "Interactive analytics charts",
-          "Responsive team dashboard"
-        ]
+          "Responsive team dashboard",
+        ],
       },
       {
         title: "Real-time Server",
@@ -689,9 +690,9 @@ export const additionalProjects = [
           "Socket.io event management",
           "Efficient database queries with Prisma",
           "Operational transformation logic",
-          "Automated email background jobs"
-        ]
-      }
+          "Automated email background jobs",
+        ],
+      },
     ],
     link: "",
     github: "https://github.com/Umair-Amjad-Ali/task-manager",
@@ -750,9 +751,9 @@ export const additionalProjects = [
           "Location-aware weather visualization",
           "Dynamic animations & background effects",
           "Smart activity recommendation engine",
-          "Offline data persistence layer"
-        ]
-      }
+          "Offline data persistence layer",
+        ],
+      },
     ],
     link: "",
     github: "https://github.com/Umair-Amjad-Ali/weather-app",
@@ -806,9 +807,9 @@ export const additionalProjects = [
           "Smart ingredient matching algorithm",
           "Interactive cooking timer & guides",
           "Offline recipe database sync",
-          "Nutritional data visualization"
-        ]
-      }
+          "Nutritional data visualization",
+        ],
+      },
     ],
     link: "",
     github: "https://github.com/Umair-Amjad-Ali/recipe-finder",
@@ -862,8 +863,8 @@ export const additionalProjects = [
           "Drag-and-drop WYSIWYG editor",
           "Live component preview engine",
           "Theme customization controls",
-          "Asset upload & optimization tool"
-        ]
+          "Asset upload & optimization tool",
+        ],
       },
       {
         title: "Deployment Service",
@@ -873,9 +874,9 @@ export const additionalProjects = [
           "Automated Vercel deployment pipeline",
           "Custom domain mapping logic",
           "Dynamic site generation (ISR)",
-          "SEO optimization scripts"
-        ]
-      }
+          "SEO optimization scripts",
+        ],
+      },
     ],
     link: "",
     github: "https://github.com/Umair-Amjad-Ali/portfolio-generator",
@@ -909,9 +910,10 @@ export const deepDives = [
     readTime: "System Design",
     category: "Backend Scalability",
     tags: ["Node.js", "Redis", "WebSockets", "System Design"],
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
     mainTech: "Socket.io",
-    complexity: "High"
+    complexity: "High",
   },
   {
     id: 2,
@@ -933,9 +935,10 @@ export const deepDives = [
     readTime: "Mobile Optimization",
     category: "Mobile Performance",
     tags: ["Flutter", "Dart", "Rendering", "Optimization"],
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
     mainTech: "Flutter Skia",
-    complexity: "Medium"
+    complexity: "Medium",
   },
   {
     id: 3,
@@ -959,9 +962,10 @@ export const deepDives = [
     readTime: "System Design",
     category: "AI Integration",
     tags: ["GPT-4", "Edge Computing", "React Native", "AI"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
     mainTech: "OpenAI API",
-    complexity: "High"
+    complexity: "High",
   },
   {
     id: 4,
@@ -988,8 +992,9 @@ export const deepDives = [
     readTime: "Frontend Optimization",
     category: "AI Performance",
     tags: ["React", "Image Compression", "Web Workers", "UX"],
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
     mainTech: "Web Workers",
-    complexity: "Medium"
-  }
+    complexity: "Medium",
+  },
 ];

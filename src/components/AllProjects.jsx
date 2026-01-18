@@ -47,7 +47,7 @@ const AllProjects = () => {
         >
           <Link
             to="/"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700 rounded-lg text-indigo-400 hover:text-indigo-300 mb-8 transition-all group backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700 rounded-lg text-indigo-400 hover:text-indigo-300 mb-8 transition-all group backdrop-blur-sm hover:no-underline"
           >
             <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
             Back to Home
@@ -106,10 +106,11 @@ const AllProjects = () => {
                 {project.status && (
                   <div className="absolute top-2 left-2">
                     <span
-                      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-xl text-[10px] font-semibold backdrop-blur-lg ${project.status === "current"
-                        ? "bg-green-500/20 border border-green-500/40 text-green-400"
-                        : "bg-indigo-500/20 border border-indigo-500/40 text-indigo-300"
-                        }`}
+                      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-xl text-[10px] font-semibold backdrop-blur-lg ${
+                        project.status === "current"
+                          ? "bg-green-500/20 border border-green-500/40 text-green-400"
+                          : "bg-indigo-500/20 border border-indigo-500/40 text-indigo-300"
+                      }`}
                     >
                       {project.status === "current" ? (
                         <>

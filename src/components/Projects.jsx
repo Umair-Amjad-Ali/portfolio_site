@@ -3,7 +3,14 @@ import { motion } from "framer-motion";
 import { projects } from "../constants";
 import { IoRocket } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaEye, FaMobileAlt, FaLaptopCode, FaGlobe, FaDatabase } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaEye,
+  FaMobileAlt,
+  FaLaptopCode,
+  FaGlobe,
+  FaDatabase,
+} from "react-icons/fa";
 import ProjectDetailModal from "./ProjectDetailModal";
 
 const Projects = () => {
@@ -27,10 +34,7 @@ const Projects = () => {
   };
 
   return (
-    <section
-      className="paddingX w-full py-14 bg-[#0a0e27]"
-      id="work"
-    >
+    <section className="paddingX w-full py-14 bg-[#0a0e27]" id="work">
       <div className="max-w-7xl mx-auto">
         {/* Header - Left Aligned */}
         <motion.div
@@ -89,10 +93,11 @@ const Projects = () => {
                 {/* Status Badge */}
                 <div className="absolute top-2 left-2">
                   <span
-                    className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-xl text-[10px] font-semibold backdrop-blur-lg ${project.status === "current"
-                      ? "bg-green-500/20 border border-green-500/40 text-green-400"
-                      : "bg-indigo-500/20 border border-indigo-500/40 text-indigo-300"
-                      }`}
+                    className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-xl text-[10px] font-semibold backdrop-blur-lg ${
+                      project.status === "current"
+                        ? "bg-green-500/20 border border-green-500/40 text-green-400"
+                        : "bg-indigo-500/20 border border-indigo-500/40 text-indigo-300"
+                    }`}
                   >
                     {project.status === "current" ? (
                       <IoRocket className="inline" size={10} />
@@ -149,7 +154,7 @@ const Projects = () => {
         >
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-gradient-to-r from-[#667eea] to-[#764ba2] rounded-xl text-white text-base font-semibold no-underline transition-all duration-300 shadow-[0_4px_20px_rgba(102,126,234,0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(102,126,234,0.5)] hover:no-underline"
+            className="inline-flex items-center gap-2.5 px-6 py-3 bg-slate-800 hover:bg-slate-700 rounded-xl text-white text-sm font-semibold transition-all duration-300 border border-slate-700 hover:border-slate-600 mb-6] hover:no-underline"
           >
             View All Projects
             <FaArrowRight size={14} />

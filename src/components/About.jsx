@@ -15,7 +15,6 @@ import {
   FaTrophy,
 } from "react-icons/fa";
 import { BiCodeAlt } from "react-icons/bi";
-import { skills } from "../constants";
 
 const About = () => {
   const [activeTimeline, setActiveTimeline] = useState(0);
